@@ -148,7 +148,8 @@ const Hero = () => {
             </h1>
 
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Vstupte do světa kreativity <br /> nech se unést sílou okamžiku
+              Enter the world of creativity <br /> 
+              let yourself be carried away by the power of the moment
             </p>
 
             <Button

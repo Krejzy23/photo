@@ -69,6 +69,8 @@ const FloatingImage = () => {
                   onMouseEnter={handleMouseLeave}
                   src="/img/studio.jpg"
                   alt="studio.jpg"
+                  width={1280}
+                  height={600}
                   className="object-contain"
                 />
               </div>
