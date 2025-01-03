@@ -1,40 +1,7 @@
-const Footer = () => {
-  const footerColumns = [
-    {
-      title: "Explore",
-      links: [
-        { label: "Home", href: "#" },
-        { label: "About Us", href: "#" },
-        { label: "Services", href: "#" },
-        { label: "Contacts", href: "#" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { label: "Help Center", href: "#" },
-        { label: "FAQs", href: "#" },
-        { label: "Contact Us", href: "#" },
-      ],
-    },
-    {
-      title: "Services",
-      links: [
-        { label: "Web Design", href: "#" },
-        { label: "Development", href: "#" },
-        { label: "Marketing", href: "#" },
-      ],
-    },
-    {
-      title: "Follow Us",
-      links: [
-        { label: "Facebook", href: "#" },
-        { label: "Twitter", href: "#" },
-        { label: "Instagram", href: "#" },
-      ],
-    },
-  ];
+import React from "react";
+import { footerColumns } from "../constants";
 
+const Footer = () => {
   return (
     <footer className="bg-gray-800 text-gray-200">
       {/* Footer Top */}
@@ -60,7 +27,7 @@ const Footer = () => {
       {/* Footer Middle */}
       <div className="footer-middle py-10 px-10">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {footerColumns.map((column, index) => (
+          {footerColumns.map(( column, index, icons ) => (
             <div key={index}>
               <h3 className="mb-4 text-lg font-semibold">{column.title}</h3>
               <ul>
