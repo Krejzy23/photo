@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useState, useRef, useEffect } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
+import VideoPreview from "./VideoPreview";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,20 +101,22 @@ const Hero = () => {
       >
         <div className="">
           <div className="mask-clip-path absolute absolute-center overflow-hidden size-64 z-50 cursor-pointer rounded-lg">
-            <div
-              onClick={handleMiniVdClick}
-              className="origin-center scale-50 opacity-0 duration-500 hover:scale-100 hover:opacity-100 ease-in transition-all"
-            >
-              <video
-                ref={nextVideoRef}
-                src={getVideoSrc(upcomingVideoIndex)}
-                loop
-                muted
-                id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={handleVideoLoad}
-              />
-            </div>
+            <VideoPreview>
+              <div
+                onClick={handleMiniVdClick}
+                className="origin-center scale-50 opacity-0 duration-500 hover:scale-100 hover:opacity-100 ease-in transition-all"
+              >
+                <video
+                  ref={nextVideoRef}
+                  src={getVideoSrc(upcomingVideoIndex)}
+                  loop
+                  muted
+                  id="current-video"
+                  className="size-64 origin-center scale-150 object-cover object-center"
+                  onLoadedData={handleVideoLoad}
+                />
+              </div>
+            </VideoPreview>
           </div>
           <video
             ref={nextVideoRef}
@@ -136,7 +139,7 @@ const Hero = () => {
           />
         </div>
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          The  M<b>O</b>MENT
+          The M<b>O</b>MENT
         </h1>
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
@@ -158,7 +161,7 @@ const Hero = () => {
         </div>
       </div>
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-       The  M<b>O</b>MENT
+        The M<b>O</b>MENT
       </h1>
     </div>
   );
