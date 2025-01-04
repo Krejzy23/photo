@@ -39,8 +39,8 @@ const About = () => {
         />
 
         <div className="about-subtext">
-          <p>Welcome to the studio where every shot tells a story.</p>
-          <p className="text-gray-500">
+          <p className="font-black text-xl">Welcome to the studio where every shot tells a story.</p>
+          <p className="text-gray-700">
             Our photography studio combines creativity and professionalism to capture your most treasured moments in stunning detail. From portraits to product photography, we create visuals that inspire and captivate.
           </p>
         </div>

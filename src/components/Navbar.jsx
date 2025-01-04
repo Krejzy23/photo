@@ -12,7 +12,6 @@ const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
 
-
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
@@ -67,15 +66,22 @@ const Navbar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" width={32} height={32}/>
+            <img
+              src="/img/logo.png"
+              alt="logo"
+              className="w-10"
+              width={32}
+              height={32}
+            />
             <Button
               id="product-button"
               title="Contacts"
               rightIcon={<TiLocationArrow />}
               containerClass="!bg-blue-50 flex items-center justify-center gap-1"
+              aria-label="Contact button"
             />
           </div>
-          <div className="flex h-full items-center">
+          <div className="flex h-full items-center uppercase">
             <div className="hidden md:block">
               {navItems.map((item, index) => (
                 <a
@@ -91,6 +97,7 @@ const Navbar = () => {
             <button
               className="flex items-center ml-10 space-x-1"
               onClick={toggleAudioIndicator}
+              aria-label={isAudioPlaying ? "Pause audio" : "Play audio"}
             >
               <audio
                 src="/audio/loop.mp3"

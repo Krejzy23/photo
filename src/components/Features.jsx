@@ -64,6 +64,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
         loop
         muted
         autoPlay
+        play
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
@@ -104,10 +105,10 @@ const Features = () => {
   <section className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="py-32 px-5">
-        <p className="font-circular-web text-xl text-blue-50">
+        <p className="font-circular-web font-bold text-xl text-blue-50">
           Into the Picture Magic
         </p>
-        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
+        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-80">
           Immerse yourself in the world of photography, where unique moments and
           emotions come together to create unforgettable visual stories captured
           through the lens
