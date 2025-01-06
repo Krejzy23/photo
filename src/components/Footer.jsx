@@ -26,7 +26,7 @@ const Footer = () => {
 
       <div className="">
         <h1 className="hero-heading special-font text-center justify-center items-center p-2">
-          PH<b>O</b>T<b>O</b>GR<b>A</b>PHY 
+          PH<b>O</b>T<b>O</b>GR<b>A</b>PHY
         </h1>
       </div>
 
@@ -38,18 +38,18 @@ const Footer = () => {
               YOUR <br /> LOGO
             </h1>
 
-            <div className="container mx-auto grid grid-cols-2  md:grid-cols-4 gap-6 p-3">
+            <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-3">
               {footerColumns.map((column, index, icons) => (
                 <div key={index}>
-                  <h3 className="mb-3 text-sm font-mono">{column.title}</h3>
+                  <h3 className="mb-3 text-sm font-mono font-black">{column.title}</h3>
                   <ul>
                     {column.links.map((link, linkIndex) => (
-                      <li key={linkIndex} className="pt-3 text-xl">
+                      <li key={linkIndex} className="pt-3 text-md md:text-xl">
                         <a
                           href={link.href}
                           className="relative inline-block px-3 py-2 text-black border-transparent transition duration-300 ease-in-out hover:border rounded-xl hover:bg-black hover:text-blue-50"
-
                         >
+                          <span className="absolute inset-0 border border-transparent rounded-xl transition-transform duration-300 hover:border-black hover:translate-x-1 hover:translate-y-1" />
                           {link.label}
                         </a>
                       </li>

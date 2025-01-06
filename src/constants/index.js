@@ -3,10 +3,10 @@ export const footerColumns = [
       title: "Explore",
       links: [
         { label: "Home", href: "#" },
-        { label: "About Us", href: "#" },
+        { label: "About", href: "#" },
         { label: "Services", href: "#" },
-        { label: "Testimonials", href: "#" },
         { label: "Contacts", href: "#" },
+        { label: "Reviews", href: "#" },
       ],
     },
     {
@@ -24,13 +24,13 @@ export const footerColumns = [
       title: "Support",
       links: [
         { label: "Adress", href: "#" },
-        { label: "Contact Us", href: "#" },
+        { label: "Contact's", href: "#" },
         { label: "Help", href: "#" },
         { label: "FAQs", href: "#" },
       ],
     },
     {
-      title: "Social Media",
+      title: "Social's",
       links: [
         { label: "Facebook", href: "#"},
         { label: "Instagram", href: "#"},
