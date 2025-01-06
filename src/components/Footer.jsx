@@ -3,7 +3,7 @@ import { footerColumns } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200">
+    <footer className="footer-bg text-blue-50">
       {/* Footer Top */}
       <div className="footer-top py-6 px-10 bg-gray-900">
         <div className="container mx-auto text-center">
@@ -24,23 +24,33 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Middle */}
-      <div className="footer-middle py-10 px-10">
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {footerColumns.map(( column, index, icons ) => (
-            <div key={index}>
-              <h3 className="mb-4 text-lg font-semibold">{column.title}</h3>
-              <ul>
-                {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a href={link.href} className="hover:underline">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <div className="">
+        {/* Footer Middle */}
+        <div className="footer-middle py-10 px-10">
+          <div className="">
+            <h1 className="text-5xl font-zentry ">
+              YOUR <br /> LOGO
+            </h1>
+          </div>
+          <div className="container mx-auto grid grid-cols-2  md:grid-cols-4 gap-6">
+            {footerColumns.map((column, index, icons) => (
+              <div key={index}>
+                <h3 className="mb-4 text-xl font-zentry">{column.title}</h3>
+                <ul>
+                  {column.links.map((link, linkIndex) => (
+                    <li key={linkIndex} className="pt-3">
+                      <a
+                        href={link.href}
+                        className="hover:underline font-circular-web"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

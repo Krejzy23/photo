@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger} from "gsap/ScrollTrigger";
 
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +14,7 @@ const ImageClipBox = ({ src, clipClass , width, height }) => (
 );
 
 const Contact = () => {
-  useEffect(() => {
+  useGSAP(() => {
     gsap.to("#contact", {
       backgroundColor: "#FC2207", // Barva pozadí (Tailwind: bg-yellow-50)
       scrollTrigger: {
@@ -22,6 +22,8 @@ const Contact = () => {
         start: "top center", // Kdy začít (můžeš si upravit)
         end: "bottom center", // Kdy skončit
         toggleActions: "play none none reverse", // Animace při scrollování
+        onLeave: () => gsap.to("#contact", { backgroundColor: "#000000" }), // Návrat na černou
+        onLeaveBack: () => gsap.to("#contact", { backgroundColor: "#FC2207" }),
       },
     });
   }, []);
