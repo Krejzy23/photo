@@ -3,9 +3,9 @@ import { footerColumns } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="footer-bg text-blue-50">
+    <footer className="footer-bg text-black">
       {/* Footer Top */}
-      <div className="footer-top py-6 px-10 bg-gray-900">
+      <div className="footer-top py-6 px-10 bg-blue-75">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl font-bold">Stay Connected</h2>
           <p className="mt-2 text-sm">
@@ -25,37 +25,45 @@ const Footer = () => {
       </div>
 
       <div className="">
+        <h1 className="hero-heading special-font text-center justify-center items-center p-2">
+          PH<b>O</b>T<b>O</b>GR<b>A</b>PHY 
+        </h1>
+      </div>
+
+      <div className="">
         {/* Footer Middle */}
         <div className="footer-middle py-10 px-10">
-          <div className="">
+          <div className="flex flex-row items-center justify-center text-center gap-10">
             <h1 className="text-5xl font-zentry ">
               YOUR <br /> LOGO
             </h1>
-          </div>
-          <div className="container mx-auto grid grid-cols-2  md:grid-cols-4 gap-6">
-            {footerColumns.map((column, index, icons) => (
-              <div key={index}>
-                <h3 className="mb-4 text-xl font-zentry">{column.title}</h3>
-                <ul>
-                  {column.links.map((link, linkIndex) => (
-                    <li key={linkIndex} className="pt-3">
-                      <a
-                        href={link.href}
-                        className="hover:underline font-circular-web"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+
+            <div className="container mx-auto grid grid-cols-2  md:grid-cols-4 gap-6 p-3">
+              {footerColumns.map((column, index, icons) => (
+                <div key={index}>
+                  <h3 className="mb-3 text-sm font-mono">{column.title}</h3>
+                  <ul>
+                    {column.links.map((link, linkIndex) => (
+                      <li key={linkIndex} className="pt-3 text-xl">
+                        <a
+                          href={link.href}
+                          className="relative inline-block px-3 py-2 text-black border-transparent transition duration-300 ease-in-out hover:border rounded-xl hover:bg-black hover:text-blue-50"
+
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="footer-bottom py-4 bg-gray-900 text-center">
+      <div className="footer-bottom py-4 footer-bg text-center">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} YourCompany. All Rights Reserved.
         </p>

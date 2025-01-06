@@ -10,20 +10,23 @@ export const footerColumns = [
       ],
     },
     {
-      title: "Support",
+      title: "Services",
       links: [
-        { label: "Adress", href: "#" },
-        { label: "FAQs", href: "#" },
-        { label: "Contact Us", href: "#" },
+        { label: "Kids ", href: "#" },
+        { label: "Family ", href: "#" },
+        { label: "Product ", href: "#" },
+        { label: "Outdoor ", href: "#" },
+        { label: "Weddings", href: "#" },
+        
       ],
     },
     {
-      title: "Services",
+      title: "Support",
       links: [
-        { label: "Weddings", href: "#" },
-        { label: "Family photography", href: "#" },
-        { label: "Product photography", href: "#" },
-        { label: "Kids photography", href: "#" },
+        { label: "Adress", href: "#" },
+        { label: "Contact Us", href: "#" },
+        { label: "Help", href: "#" },
+        { label: "FAQs", href: "#" },
       ],
     },
     {
