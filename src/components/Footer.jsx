@@ -34,8 +34,8 @@ const Footer = () => {
         {/* Footer Middle */}
         <div className="footer-middle py-10 px-10">
           <div className="flex flex-row items-center justify-center text-center gap-10">
-            <h1 className="text-5xl font-zentry ">
-              YOUR <br /> LOGO
+            <h1 className="text-5xl special-font font-zentry ">
+              Y<b>O</b>UR <br /> LOG<b>O</b>
             </h1>
 
             <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-3">
@@ -65,7 +65,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom py-4 footer-bg text-center">
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} YourCompany. All Rights Reserved.
+          &copy; {new Date().getFullYear()} YourCompany. All Rights Reserved. Created by Aleš Krejzl.
         </p>
       </div>
     </footer>
