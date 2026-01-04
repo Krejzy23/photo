@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { useNavigate } from "react-router-dom";
 
 export const BentoTilt = ({ children, className }) => {
   const [transformStyle, setTransformStyle] = useState("");
@@ -39,7 +40,8 @@ export const BentoTilt = ({ children, className }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description, isComingSoon }) => {
+export const BentoCard = ({ src, title, description, isComingSoon, to }) => {
+  const navigate = useNavigate();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
@@ -57,21 +59,33 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
   const handleMouseEnter = () => setHoverOpacity(1);
   const handleMouseLeave = () => setHoverOpacity(0);
 
+  const handleClick = () => {
+    if (to && !isComingSoon) {
+      navigate(to);
+    }
+  };
+
   return (
-    <div className="relative size-full">
+    <div
+      onClick={handleClick}
+      className={`relative size-full ${to ? "cursor-pointer" : ""}`}
+    >
       <video
         src={src}
         loop
         muted
         autoPlay
-        play
+        playsInline
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
+
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
         <div>
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+            <p className="mt-3 max-w-64 text-xs md:text-base">
+              {description}
+            </p>
           )}
         </div>
 
@@ -81,11 +95,10 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
+            className="border-hsla relative flex w-fit items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
           >
-            {/* Radial gradient hover effect */}
             <div
-              className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+              className="pointer-events-none absolute -inset-px transition duration-300"
               style={{
                 opacity: hoverOpacity,
                 background: `radial-gradient(100px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #656fe288, #00000026)`,
@@ -99,6 +112,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
     </div>
   );
 };
+
 
 const Features = () => {
   return(
@@ -165,6 +179,7 @@ const Features = () => {
                 <b>w</b>eddings
               </>
             }
+            to="/services/weddings"
           />
         </BentoTilt>
       </div>

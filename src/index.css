@@ -275,3 +275,7 @@ body {
 .footer-bg {
   background-color: #FC2207;
 }
+
+.wedding-hero-heading {
+  @apply uppercase font-zentry font-black text-4xl sm:right-10 sm:text-5xl md:text-7xl lg:text-8xl;
+}
