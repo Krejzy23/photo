@@ -17,7 +17,7 @@ const WeddingsGallery = () => {
     });
   });
   return (
-    <section className="w-screen px-4 py-24 sm:px-8">
+    <section className="w-screen bg-violet-50 px-4 py-24 sm:px-8">
       <div className="relative mb-8 mt-5 flex flex-col items-center gap-5">
         <p className="font-general text-sm uppercase md:text-[10px]">
           #Gallery

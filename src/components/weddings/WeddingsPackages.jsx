@@ -5,16 +5,16 @@ import { packages } from "../../constants";
 
 const WeddingsPackages = () => {
   return (
-    <section className="py-32">
+    <section className="py-32 bg-violet-50">
       <div className="container mx-auto px-5 md:px-10">
 
         {/* Header */}
         <div className="mb-20 text-center">
           <p className="font-general text-sm uppercase text-black/60">
-            Wedding packages
+            #Wedding packages
           </p>
-          <h2 className="special-font mt-4 text-4xl md:text-6xl text-black">
-            Simple, transparent packages
+          <h2 className="special-font font-zentry mt-4 text-4xl md:text-6xl text-black">
+            Simple, tr<b>a</b>nsp<b>a</b>rent p<b>a</b>ck<b>a</b>ges
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-black/70">
             Choose the package that best fits your wedding day.
@@ -23,7 +23,7 @@ const WeddingsPackages = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3 ">
           {packages.map((pkg, index) => (
             <div
               key={index}
@@ -35,7 +35,7 @@ const WeddingsPackages = () => {
               `}
             >
               {pkg.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-black px-4 py-1 text-xs uppercase text-white">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-pink-100 px-4 py-1 text-xs uppercase text-black">
                   Most popular
                 </span>
               )}

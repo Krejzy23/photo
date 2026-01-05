@@ -39,7 +39,7 @@ const WeddingsHero = () => {
     <section className="relative h-dvh w-screen overflow-x-hidden">
       <div
         id="hero-frame"
-        className="relative h-dvh w-screen z-10 overflow-hidden bg-blue-75"
+        className="relative h-dvh w-screen z-10 overflow-hidden"
       >
         <h1 className="special-font wedding-hero-heading absolute bottom-8 right-8 md:bottom-5 md:right-5 z-40 text-blue-100">
           We<b>dd</b>ing

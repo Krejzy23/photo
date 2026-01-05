@@ -30,15 +30,15 @@ const steps = [
 
 const WeddingsProcess = () => {
   return (
-    <section className="py-32">
-      <div className="container mx-auto px-5 md:px-10">
+    <section className="bg-violet-50 py-32">
+      <div className="container bg-white mx-auto p-10 ">
 
         {/* Header */}
         <div className="mb-20 text-center">
           <p className="font-general text-sm uppercase text-black/60">
-            The process
+            #The process
           </p>
-          <h2 className="special-font mt-4 text-4xl md:text-6xl text-black">
+          <h2 className="special-font mt-4 font-zentry text-4xl md:text-6xl text-black">
             H<b>o</b>w it w<b>o</b>rks
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-black/70">
@@ -50,7 +50,7 @@ const WeddingsProcess = () => {
         <div className="relative flex flex-col gap-16 md:flex-row md:gap-0">
 
           {/* Line */}
-          <div className="absolute left-6 top-0 h-full w-px bg-black/10 md:left-0 md:top-1/2 md:h-px md:w-full" />
+          <div className="absolute left-6 top-0 h-full w-px bg-black/10 md:left-0 md:top-1/2 md:h-px md:w-full md:-mt-5" />
 
           {steps.map((step, index) => (
             <div
@@ -63,7 +63,7 @@ const WeddingsProcess = () => {
               </div>
 
               {/* Content */}
-              <div className="mt-6 max-w-xs text-left md:text-center">
+              <div className="mt-6 max-w-xs px-10 text-left md:text-center">
                 <h3 className="text-lg font-semibold text-black">
                   {step.title}
                 </h3>
