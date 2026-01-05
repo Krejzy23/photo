@@ -39,8 +39,11 @@ const WeddingsHero = () => {
     <section className="relative h-dvh w-screen overflow-x-hidden">
       <div
         id="hero-frame"
-        className="relative h-dvh w-screen overflow-hidden"
+        className="relative h-dvh w-screen z-10 overflow-hidden bg-blue-75"
       >
+        <h1 className="special-font wedding-hero-heading absolute bottom-8 right-8 md:bottom-5 md:right-5 z-40 text-blue-100">
+          We<b>dd</b>ing
+        </h1>
         {/* HERO IMAGE */}
         <img
           src="/img/weddingsHero.jpg"
@@ -54,27 +57,28 @@ const WeddingsHero = () => {
         {/* CONTENT */}
         <div className="hero-content absolute inset-0 z-10 flex flex-col justify-center px-6 sm:px-12 text-blue-100">
           <h1 className="special-font wedding-hero-heading max-w-xl">
-            Your <b>Wedding</b>,<br /> captured forever
+            Y<b>o</b>ur We<b>dd</b>ing,
+            <br /> capt<b>u</b>red <br /> f<b>o</b>re<b>v</b>er
           </h1>
 
-          <p className="mt-4 max-w-xs font-robert-regular">
-            Timeless photography & films that tell your love story
-            exactly as it felt.
+          <p className="mt-4 max-w-xs text-blue-100 font-robert-regular">
+            Timeless photography & films that tell your love story exactly as it
+            felt.
           </p>
 
           <div className="mt-6">
             <Button
               title="Check availability"
               leftIcon={<TiLocationArrow />}
-              containerClass="!bg-yellow-300 flex-center gap-1"
+              containerClass="!bg-pink-100 flex-center gap-1"
             />
           </div>
         </div>
       </div>
 
       {/* BACK TEXT */}
-      <h1 className="special-font wedding-hero-heading absolute bottom-5 right-5 z-40 text-blue-100">
-        Wedding
+      <h1 className="special-font wedding-hero-heading absolute bottom-8 right-8 md:bottom-5 md:right-5 text-black">
+        We<b>dd</b>ing
       </h1>
     </section>
   );

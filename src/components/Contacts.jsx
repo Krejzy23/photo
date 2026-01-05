@@ -19,7 +19,7 @@ const Contact = () => {
       backgroundColor: "#FC2207", // Barva pozadí (Tailwind: bg-yellow-50)
       scrollTrigger: {
         trigger: "#contact",
-        start: "top center", // Kdy začít (můžeš si upravit)
+        start: "top center", // Kdy začít 
         end: "bottom center", // Kdy skončit
         toggleActions: "play none none reverse", // Animace při scrollování
         onLeave: () => gsap.to("#contact", { backgroundColor: "#000000" }), // Návrat na černou

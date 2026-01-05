@@ -2,7 +2,7 @@ export const footerColumns = [
   {
     title: "Explore",
     links: [
-      { label: "Home", href: "#" },
+      { label: "Home", href: "#home" },
       { label: "About", href: "#about" },
       { label: "Services", href: "#services" },
       { label: "Contacts", href: "#contact" },
