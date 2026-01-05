@@ -112,3 +112,10 @@ export const weddingFaqs = [
       "Simply reach out via the contact form. After a consultation and confirmation, a signed contract and retainer secure your date.",
   },
 ];
+
+export const serviceItems = [
+  { label: "Weddings", href: "/services/weddings" },
+  { label: "Newborn", href: "/services/newborn" },
+  { label: "Products", href: "/services/products" },
+  { label: "Portraits", href: "/services/portraits" },
+];
