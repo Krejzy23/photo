@@ -4,7 +4,7 @@ import NewbornHero from "../../components/newborn/NewbornHero";
 import NewbornStory from "../../components/newborn/NewbornStory";
 import NewbornGallery from "../../components/newborn/NewbornGallery";
 import NewbornPackages from "../../components/newborn/NewbornPackages";
-import NewbornFAQ from "../../components/newborn/NewbornFAQ";
+import NewbornFaq from "../../components/newborn/NewbornFaq";
 import NewbornCTA from "../../components/newborn/NewbornCTA";
 
 const Newborn = () => {
@@ -14,7 +14,7 @@ const Newborn = () => {
       <NewbornStory />
       <NewbornGallery />
       <NewbornPackages />
-      <NewbornFAQ />
+      <NewbornFaq />
       <NewbornCTA />
     </main>
   );

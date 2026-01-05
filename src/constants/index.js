@@ -127,3 +127,43 @@ export const serviceItems = [
   { label: "Products", to: "/services/products" },
   { label: "Portraits", to: "/services/portraits" },
 ];
+
+export const newbornPackages = [
+  {
+    title: "Mini Newborn",
+    subtitle: "Simple & timeless",
+    priceNote: "Perfect first keepsake",
+    features: [
+      "Up to 1 hour studio session",
+      "1 setup (neutral tones)",
+      "8 professionally edited photos",
+      "Online private gallery",
+      "Baby-led & safe posing",
+    ],
+  },
+  {
+    title: "Signature Newborn",
+    subtitle: "Most popular",
+    highlight: true,
+    priceNote: "Relaxed & complete experience",
+    features: [
+      "2–3 hours relaxed session",
+      "2–3 styled setups",
+      "20 edited photos",
+      "Parents & siblings included",
+      "Online gallery + print-ready files",
+    ],
+  },
+  {
+    title: "Full Experience",
+    subtitle: "No compromises",
+    priceNote: "A complete newborn story",
+    features: [
+      "No time limit – baby sets the pace",
+      "Multiple setups & styling",
+      "30+ edited photos",
+      "Family & detail shots",
+      "Luxury keepsake option",
+    ],
+  },
+];

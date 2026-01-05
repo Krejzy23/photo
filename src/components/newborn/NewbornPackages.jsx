@@ -1,45 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-
-const packages = [
-  {
-    title: "Mini Newborn",
-    subtitle: "Simple & timeless",
-    priceNote: "Perfect first keepsake",
-    features: [
-      "Up to 1 hour studio session",
-      "1 setup (neutral tones)",
-      "8 professionally edited photos",
-      "Online private gallery",
-      "Baby-led & safe posing",
-    ],
-  },
-  {
-    title: "Signature Newborn",
-    subtitle: "Most popular",
-    highlight: true,
-    priceNote: "Relaxed & complete experience",
-    features: [
-      "2–3 hours relaxed session",
-      "2–3 styled setups",
-      "20 edited photos",
-      "Parents & siblings included",
-      "Online gallery + print-ready files",
-    ],
-  },
-  {
-    title: "Full Experience",
-    subtitle: "No compromises",
-    priceNote: "A complete newborn story",
-    features: [
-      "No time limit – baby sets the pace",
-      "Multiple setups & styling",
-      "30+ edited photos",
-      "Family & detail shots",
-      "Luxury keepsake option",
-    ],
-  },
-];
+import { newbornPackages } from "../../constants";
 
 const NewbornPackages = () => {
   return (
@@ -60,7 +21,7 @@ const NewbornPackages = () => {
 
       {/* Cards */}
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
-        {packages.map((pkg, i) => (
+        {newbornPackages.map((pkg, i) => (
           <div
             key={i}
             className={clsx(
@@ -71,7 +32,7 @@ const NewbornPackages = () => {
             )}
           >
             {pkg.highlight && (
-              <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-black px-4 py-1 text-xs text-white">
+              <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-pink-200 px-4 py-1 text-xs text-white">
                 Most popular
               </span>
             )}
@@ -100,7 +61,7 @@ const NewbornPackages = () => {
               className={clsx(
                 "mt-10 w-full rounded-full py-3 text-sm transition",
                 pkg.highlight
-                  ? "bg-black text-white hover:bg-black/90"
+                  ? "bg-pink-200 text-black hover:text-white hover:bg-black/90"
                   : "border border-black/10 hover:bg-black hover:text-white"
               )}
             >
