@@ -83,9 +83,7 @@ export const BentoCard = ({ src, title, description, isComingSoon, to }) => {
         <div>
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-64 text-xs md:text-base">
-              {description}
-            </p>
+            <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
           )}
         </div>
 
@@ -113,79 +111,84 @@ export const BentoCard = ({ src, title, description, isComingSoon, to }) => {
   );
 };
 
-
 const Features = () => {
-  return(
-  <section className="bg-black pb-52">
-    <div className="container mx-auto px-3 md:px-10">
-      <div className="py-32 px-5">
-        <p className="font-circular-web font-bold text-xl text-blue-50">
-          Into the Picture Magic
-        </p>
-        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-80">
-          Immerse yourself in the world of photography, where unique moments and
-          emotions come together to create unforgettable visual stories captured
-          through the lens
-        </p>
-      </div>
-      <BentoTilt className="relative w-full mb-7 h-96 overflow-hidden rounded-md md:h-[65vh] border-hsla ">
-        <BentoCard
-          src="videos/feature-1.mp4"
-          title={
-            <>
-              o<b>u</b>r Phot<b>o</b> Services
-            </>
-          }
-          description="Professional approach, top-notch quality, unique results."
-        />
-      </BentoTilt>
-      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+  return (
+    <section className="bg-black pb-52">
+      <div className="container mx-auto px-3 md:px-10">
+        <div className="py-32 px-5">
+          <p className="font-circular-web font-bold text-xl text-blue-50">
+            Into the Picture Magic
+          </p>
+          <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-80">
+            Immerse yourself in the world of photography, where unique moments
+            and emotions come together to create unforgettable visual stories
+            captured through the lens
+          </p>
+        </div>
+        <BentoTilt className="relative w-full mb-7 h-96 overflow-hidden rounded-md md:h-[65vh] border-hsla ">
           <BentoCard
-            src="videos/feature-2.mp4"
+            src="videos/feature-1.mp4"
             title={
               <>
-                p<b>o</b>stpr<b>o</b>cessing
+                o<b>u</b>r Phot<b>o</b> Services
               </>
             }
+            description="Professional approach, top-notch quality, unique results."
           />
         </BentoTilt>
-        <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-          <BentoCard
-            src="videos/feature-3.mp4"
-            title={
-              <>
-                Pr<b>o</b>d<b>u</b>ct's
-              </>
-            }
-          />
-        </BentoTilt>
-        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
-          <BentoCard
-            src="videos/feature-4.mp4"
-            title={
-              <>
-                newb<b>o</b>rn
-              </>
-            }
-          />
-        </BentoTilt>
+        <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+            <BentoCard
+              src="videos/feature-2.mp4"
+              title={
+                <>
+                  p<b>o</b>stpr<b>o</b>cessing
+                </>
+              }
+            />
+          </BentoTilt>
+          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+            <BentoCard
+              src="videos/feature-3.mp4"
+              title={
+                <>
+                  Pr<b>o</b>d<b>u</b>ct's
+                </>
+              }
+            />
+          </BentoTilt>
+          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+            <BentoCard
+              src="videos/feature-4.mp4"
+              title={
+                <>
+                  newb<b>o</b>rn
+                  <p className="mt-2 text-sm font-robert-medium opacity-80 z-10">
+                    View service →
+                  </p>
+                </>
+              }
+            />
+          </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 relative w-full h-96 overflow-hidden md:h-[65vh] border-hsla">
-          <BentoCard
-            src="videos/feature-5.mp4"
-            title={
-              <>
-                <b>w</b>eddings
-              </>
-            }
-            to="/services/weddings"
-          />
-        </BentoTilt>
+          <BentoTilt className="bento-tilt_1 relative w-full h-96 overflow-hidden md:h-[65vh] border-hsla">
+            <BentoCard
+              src="videos/feature-5.mp4"
+              title={
+                <>
+                  we<b>dd</b>ings
+                  <p className="mt-2 text-sm font-robert-medium opacity-80 z-10">
+                    View service →
+                  </p>
+                </>
+              }
+              to="/services/weddings"
+            />
+          </BentoTilt>
+        </div>
       </div>
-    </div>
-  </section>
-  )
+    </section>
+  );
 };
 
 export default Features;

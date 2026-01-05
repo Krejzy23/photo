@@ -40,18 +40,18 @@ export const footerColumns = [
 ];
 
 export const weddingImages = [
-  "/img/gallery/weddingGallery-01.webp",
-  "/img/gallery/weddingGallery-02.webp",
-  "/img/gallery/weddingGallery-03.webp",
-  "/img/gallery/weddingGallery-04.webp",
-  "/img/gallery/weddingGallery-05.webp",
-  "/img/gallery/weddingGallery-06.webp",
-  "/img/gallery/weddingGallery-07.webp",
-  "/img/gallery/weddingGallery-08.webp",
-  "/img/gallery/weddingGallery-09.webp",
-  "/img/gallery/weddingGallery-10.webp",
-  "/img/gallery/weddingGallery-11.webp",
-  "/img/gallery/weddingGallery-12.webp",
+  "/img/weddingGallery/weddingGallery-01.webp",
+  "/img/weddingGallery/weddingGallery-02.webp",
+  "/img/weddingGallery/weddingGallery-03.webp",
+  "/img/weddingGallery/weddingGallery-04.webp",
+  "/img/weddingGallery/weddingGallery-05.webp",
+  "/img/weddingGallery/weddingGallery-06.webp",
+  "/img/weddingGallery/weddingGallery-07.webp",
+  "/img/weddingGallery/weddingGallery-08.webp",
+  "/img/weddingGallery/weddingGallery-09.webp",
+  "/img/weddingGallery/weddingGallery-10.webp",
+  "/img/weddingGallery/weddingGallery-11.webp",
+  "/img/weddingGallery/weddingGallery-12.webp",
 ];
 
 export const packages = [

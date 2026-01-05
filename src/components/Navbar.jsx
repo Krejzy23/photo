@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import clsx from "clsx";
 import { gsap } from "gsap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useWindowScroll } from "react-use";
-import { useRef, useState, useEffect } from "react";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { navItems, serviceItems } from "../constants";
@@ -13,11 +12,7 @@ const Navbar = () => {
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
-  };
-
+  const location = useLocation();
   const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
 
@@ -25,12 +20,21 @@ const Navbar = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioElementRef.current.play();
-    } else {
-      audioElementRef.current.pause();
+  const toggleAudioIndicator = () => {
+    setIsAudioPlaying((p) => !p);
+    setIsIndicatorActive((p) => !p);
+  };
+
+  const handleHomeClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
+  };
+
+  useEffect(() => {
+    isAudioPlaying
+      ? audioElementRef.current?.play()
+      : audioElementRef.current?.pause();
   }, [isAudioPlaying]);
 
   useEffect(() => {
@@ -55,99 +59,99 @@ const Navbar = () => {
     gsap.to(navContainerRef.current, {
       y: isNavVisible ? 0 : -100,
       opacity: isNavVisible ? 1 : 0,
-      duration: 0.2,
+      duration: 0.25,
+      ease: "power2.out",
     });
   }, [isNavVisible]);
 
   return (
     <div
       ref={navContainerRef}
-      className="fixed inset-x-0 h-16 z-50 top-4 border-none duration-700 transition-all sm:inset-x-6"
+      className="fixed inset-x-0 top-4 z-50 h-16 transition-all sm:inset-x-6"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
-          <div className="flex items-center gap-7">
-            <img
-              src="/img/logo.png"
-              alt="logo"
-              className="w-10"
-              width={32}
-              height={32}
-            />
+        <nav className="flex h-full items-center justify-between px-6">
+          {/* LEFT */}
+          <div className="flex items-center gap-6">
+            <img src="/img/logo.png" alt="logo" className="w-10" />
+
             <Button
-              id="product-button"
               title="Contacts"
               rightIcon={<TiLocationArrow />}
-              containerClass="!bg-blue-50 flex items-center justify-center gap-1"
-              aria-label="Contact button"
+              containerClass="!bg-blue-50 flex items-center gap-1"
             />
           </div>
-          <div className="flex items-center h-full uppercase">
-            <div className="hidden md:flex items-center gap-8">
-              {navItems.map((item, index) => {
-                if (item.type === "submenu") {
-                  return (
-                    <div key={index} className="relative">
-                      <button
-                        onClick={() => setIsServicesOpen((p) => !p)}
-                        className="nav-hover-btn"
-                      >
-                        SERVICES
-                      </button>
 
-                      {isServicesOpen && (
-                        <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2 rounded-full bg-black/80 px-6 py-3 backdrop-blur-md">
-                          <div className="flex gap-6 whitespace-nowrap">
-                            {serviceItems.map((service, i) => (
-                              <Link
-                                key={i}
-                                to={service.to}
-                                className="text-sm text-white/70 hover:text-white transition"
-                                onClick={() => setIsServicesOpen(false)}
-                              >
-                                {service.label}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
+          {/* CENTER */}
+          <div className="hidden md:flex items-center gap-8 uppercase">
+            {navItems.map((item, index) => {
+              if (item.type === "submenu") {
                 return (
-                  <Link key={index} to={item.to} className="nav-hover-btn">
-                    {item.label}
+                  <div key={index} className="relative">
+                    <button
+                      onClick={() => setIsServicesOpen((p) => !p)}
+                      className="nav-hover-btn"
+                    >
+                      SERVICES
+                    </button>
+
+                    {isServicesOpen && (
+                      <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2 rounded-full bg-black/80 px-6 py-3 backdrop-blur-md">
+                        <div className="flex gap-6 whitespace-nowrap">
+                          {serviceItems.map((service, i) => (
+                            <Link
+                              key={i}
+                              to={service.to}
+                              className="text-sm text-white/70 transition hover:text-white"
+                              onClick={() => setIsServicesOpen(false)}
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              if (item.label === "Home") {
+                return (
+                  <Link
+                    key={index}
+                    to="/"
+                    onClick={handleHomeClick}
+                    className="nav-hover-btn"
+                  >
+                    Home
                   </Link>
                 );
-              })}
-            </div>
+              }
 
-            <button
-              className="flex items-center ml-10 space-x-1"
-              onClick={toggleAudioIndicator}
-              aria-label={isAudioPlaying ? "Pause audio" : "Play audio"}
-            >
-              <audio
-                src="/audio/loop.mp3"
-                ref={audioElementRef}
-                className="hidden"
-                loop
-              />
-
-              {[1, 2, 3, 4].map((bar) => (
-                <div
-                  key={bar}
-                  className={clsx("indicator-line", {
-                    active: isIndicatorActive,
-                  })}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
+              return (
+                <Link key={index} to={item.to} className="nav-hover-btn">
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
+
+          {/* RIGHT */}
+          <button
+            onClick={toggleAudioIndicator}
+            className="flex items-center gap-1"
+          >
+            <audio ref={audioElementRef} src="/audio/loop.mp3" loop />
+            {[1, 2, 3, 4].map((bar) => (
+              <div
+                key={bar}
+                className={clsx("indicator-line", {
+                  active: isIndicatorActive,
+                })}
+                style={{ animationDelay: `${bar * 0.1}s` }}
+              />
+            ))}
+          </button>
         </nav>
       </header>
     </div>

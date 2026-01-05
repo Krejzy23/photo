@@ -22,11 +22,10 @@ const WeddingsGallery = () => {
         <p className="font-general text-sm uppercase md:text-[10px]">
           #Gallery
         </p>
+        <h2 className="special-font font-zentry text-4xl md:text-6xl text-black">
+            Wedding photography filled with emotion.
+          </h2>
 
-        <AnimatedTitle
-          title="Wedding photography filled with emotion."
-          containerClass="mt-5 !text-black text-center"
-        />
         <div className="flex items-center justify-center">
           <p className="mx-auto mt-6 max-w-xl text-sm md:text-base text-black/70">
             A selection of wedding photographs capturing love, connection and
