@@ -168,6 +168,7 @@ const Features = () => {
                   </p>
                 </>
               }
+              to="/services/newborn"
             />
           </BentoTilt>
 
