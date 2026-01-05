@@ -1,16 +1,17 @@
 import React from "react";
 import clsx from "clsx";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 import { useWindowScroll } from "react-use";
 import { useRef, useState, useEffect } from "react";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
-
-const navItems = ["Home", "About Us", "Services", "Reviews", "Contacts"];
+import { navItems, serviceItems } from "../constants";
 
 const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
@@ -81,17 +82,45 @@ const Navbar = () => {
               aria-label="Contact button"
             />
           </div>
-          <div className="flex h-full items-center uppercase">
-            <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item}
-                </a>
-              ))}
+          <div className="flex items-center h-full uppercase">
+            <div className="hidden md:flex items-center gap-8">
+              {navItems.map((item, index) => {
+                if (item.type === "submenu") {
+                  return (
+                    <div key={index} className="relative">
+                      <button
+                        onClick={() => setIsServicesOpen((p) => !p)}
+                        className="nav-hover-btn"
+                      >
+                        SERVICES
+                      </button>
+
+                      {isServicesOpen && (
+                        <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2 rounded-full bg-black/80 px-6 py-3 backdrop-blur-md">
+                          <div className="flex gap-6 whitespace-nowrap">
+                            {serviceItems.map((service, i) => (
+                              <Link
+                                key={i}
+                                to={service.to}
+                                className="text-sm text-white/70 hover:text-white transition"
+                                onClick={() => setIsServicesOpen(false)}
+                              >
+                                {service.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link key={index} to={item.to} className="nav-hover-btn">
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
 
             <button

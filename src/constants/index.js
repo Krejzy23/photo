@@ -113,9 +113,17 @@ export const weddingFaqs = [
   },
 ];
 
+export const navItems = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/#about" },
+  { label: "Services", type: "submenu" },
+  { label: "Reviews", to: "/#reviews" },
+  { label: "Contacts", to: "/#contact" },
+];
+
 export const serviceItems = [
-  { label: "Weddings", href: "/services/weddings" },
-  { label: "Newborn", href: "/services/newborn" },
-  { label: "Products", href: "/services/products" },
-  { label: "Portraits", href: "/services/portraits" },
+  { label: "Weddings", to: "/services/weddings" },
+  { label: "Newborn", to: "/services/newborn" },
+  { label: "Products", to: "/services/products" },
+  { label: "Portraits", to: "/services/portraits" },
 ];
