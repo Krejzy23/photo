@@ -53,3 +53,34 @@ export const weddingImages = [
   "/img/gallery/weddingGallery-11.webp",
   "/img/gallery/weddingGallery-12.webp",
 ];
+
+export const packages = [
+  {
+    name: "Essential",
+    priceNote: "For intimate weddings",
+    features: [
+      "6 hours coverage",
+      "300+ edited photos",
+      "Online gallery",
+    ],
+  },
+  {
+    name: "Signature",
+    highlight: true,
+    priceNote: "Most popular choice",
+    features: [
+      "10 hours coverage",
+      "500+ edited photos",
+      "Preview within 72h",
+    ],
+  },
+  {
+    name: "Luxury",
+    priceNote: "Full experience",
+    features: [
+      "Full day coverage",
+      "Second shooter",
+      "Luxury photo book",
+    ],
+  },
+];
