@@ -124,8 +124,8 @@ export const navItems = [
 export const serviceItems = [
   { label: "Weddings", to: "/services/weddings" },
   { label: "Newborn", to: "/services/newborn" },
-  { label: "Products", to: "/services/products" },
   { label: "Portraits", to: "/services/portraits" },
+  { label: "Products", to: "/services/products" },
 ];
 
 export const newbornPackages = [

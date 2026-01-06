@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Weddings from "./pages/services/Weddings";
 import Newborn from "./pages/services/Newborn";
+import Portraits from "./pages/services/Portraits";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/services/weddings" element={<Weddings />} />
         <Route path="/services/newborn" element={<Newborn />} />
+        <Route path="/services/portraits" element={<Portraits />} />
       </Routes>
 
       <Footer />
