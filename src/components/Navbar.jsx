@@ -99,14 +99,17 @@ const Navbar = () => {
                     <div key={index} className="relative">
                       <button
                         onClick={() => setIsServicesOpen((p) => !p)}
-                        className="nav-hover-btn"
+                        className="nav-hover-btn flex items-center"
                       >
                         SERVICES
+                        <div className="px-1">
+                          <HiChevronDown />
+                        </div>
                       </button>
 
                       {isServicesOpen && (
-                        <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2 rounded-full bg-black/80 px-6 py-3 backdrop-blur-md">
-                          <div className="flex gap-6">
+                        <div className="absolute left-20 top-full mt-5 -translate-x-1/2 bg-black px-6 py-3 backdrop-blur-md rounded-b-lg">
+                          <div className="flex flex-col gap-6">
                             {serviceItems.map((service, i) => (
                               <Link
                                 key={i}

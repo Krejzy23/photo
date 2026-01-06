@@ -55,7 +55,7 @@ const NewbornHero = () => {
           <div className="nb-fade flex justify-center">
             <Button
               title="Book a session"
-              containerClass="bg-pink-300 text-white hover:bg-black/80"
+              containerClass="bg-pink-400 text-white hover:bg-black/80"
             />
           </div>
         </div>
