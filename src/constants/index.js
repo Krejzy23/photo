@@ -115,7 +115,7 @@ export const weddingFaqs = [
 
 export const navItems = [
   { label: "Home", to: "/" },
-  { label: "About Us", to: "/#about" },
+  { label: "About", to: "/#about" },
   { label: "Services", type: "submenu" },
   { label: "Reviews", to: "/#reviews" },
   { label: "Contacts", to: "/#contact" },
@@ -165,5 +165,32 @@ export const newbornPackages = [
       "Family & detail shots",
       "Luxury keepsake option",
     ],
+  },
+];
+
+export const newbornFaqs = [
+  {
+    q: "When is the best time for newborn photos?",
+    a: "The ideal time is between 5–14 days after birth, when babies sleep deeply and are naturally flexible.",
+  },
+  {
+    q: "Is the session safe for my baby?",
+    a: "Yes. Your baby’s comfort and safety are always the top priority. All poses are gentle and natural.",
+  },
+  {
+    q: "How long does the session take?",
+    a: "Sessions usually last 2–3 hours, allowing plenty of time for feeding, cuddling and soothing.",
+  },
+  {
+    q: "Do we need to bring anything?",
+    a: "No worries — wraps, outfits and props are provided. Neutral clothing works best for parents.",
+  },
+  {
+    q: "What if my baby is unsettled?",
+    a: "That’s perfectly normal. We follow your baby’s rhythm and take breaks whenever needed.",
+  },
+  {
+    q: "Can parents and siblings join the session?",
+    a: "Absolutely. Parents and siblings are always welcome to join and create family memories.",
   },
 ];

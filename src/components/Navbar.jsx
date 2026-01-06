@@ -4,13 +4,19 @@ import { gsap } from "gsap";
 import { Link, useLocation } from "react-router-dom";
 import { useWindowScroll } from "react-use";
 import Button from "./Button";
+import CameraLogo from "./CameraLogo";
 import { TiLocationArrow } from "react-icons/ti";
+import { HiBars3, HiXMark, HiChevronDown } from "react-icons/hi2";
 import { navItems, serviceItems } from "../constants";
 
 const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  // MOBILE
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   const location = useLocation();
   const audioElementRef = useRef(null);
@@ -29,6 +35,7 @@ const Navbar = () => {
     if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
+    setIsMobileOpen(false);
   };
 
   useEffect(() => {
@@ -65,96 +72,163 @@ const Navbar = () => {
   }, [isNavVisible]);
 
   return (
-    <div
-      ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 transition-all sm:inset-x-6"
-    >
-      <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex h-full items-center justify-between px-6">
-          {/* LEFT */}
-          <div className="flex items-center gap-6">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+    <>
+      {/* NAVBAR */}
+      <div
+        ref={navContainerRef}
+        className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
+      >
+        <header className="absolute top-1/2 w-full -translate-y-1/2">
+          <nav className="flex h-full items-center justify-between px-6 ">
+            {/* LEFT */}
+            <div className="flex items-center gap-6">
+              <CameraLogo className="transition h-10 w-10 text-white hover:rotate-6 hover:scale-110" />
 
-            <Button
-              title="Contacts"
-              rightIcon={<TiLocationArrow />}
-              containerClass="!bg-blue-50 flex items-center gap-1"
-            />
-          </div>
+              <Button
+                title="Contacts"
+                rightIcon={<TiLocationArrow />}
+                containerClass="!bg-blue-50 hidden md:flex items-center gap-1"
+              />
+            </div>
 
-          {/* CENTER */}
-          <div className="hidden md:flex items-center gap-8 uppercase">
-            {navItems.map((item, index) => {
-              if (item.type === "submenu") {
-                return (
-                  <div key={index} className="relative">
-                    <button
-                      onClick={() => setIsServicesOpen((p) => !p)}
+            {/* DESKTOP MENU */}
+            <div className="hidden md:flex items-center gap-8 uppercase">
+              {navItems.map((item, index) => {
+                if (item.type === "submenu") {
+                  return (
+                    <div key={index} className="relative">
+                      <button
+                        onClick={() => setIsServicesOpen((p) => !p)}
+                        className="nav-hover-btn"
+                      >
+                        SERVICES
+                      </button>
+
+                      {isServicesOpen && (
+                        <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2 rounded-full bg-black/80 px-6 py-3 backdrop-blur-md">
+                          <div className="flex gap-6">
+                            {serviceItems.map((service, i) => (
+                              <Link
+                                key={i}
+                                to={service.to}
+                                onClick={() => setIsServicesOpen(false)}
+                                className="text-sm text-white/70 hover:text-white"
+                              >
+                                {service.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                if (item.label === "Home") {
+                  return (
+                    <Link
+                      key={index}
+                      to="/"
+                      onClick={handleHomeClick}
                       className="nav-hover-btn"
                     >
-                      SERVICES
-                    </button>
+                      Home
+                    </Link>
+                  );
+                }
 
-                    {isServicesOpen && (
-                      <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2 rounded-full bg-black/80 px-6 py-3 backdrop-blur-md">
-                        <div className="flex gap-6 whitespace-nowrap">
-                          {serviceItems.map((service, i) => (
-                            <Link
-                              key={i}
-                              to={service.to}
-                              className="text-sm text-white/70 transition hover:text-white"
-                              onClick={() => setIsServicesOpen(false)}
-                            >
-                              {service.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              if (item.label === "Home") {
                 return (
-                  <Link
-                    key={index}
-                    to="/"
-                    onClick={handleHomeClick}
-                    className="nav-hover-btn"
-                  >
-                    Home
+                  <Link key={index} to={item.to} className="nav-hover-btn">
+                    {item.label}
                   </Link>
                 );
-              }
+              })}
+            </div>
 
-              return (
-                <Link key={index} to={item.to} className="nav-hover-btn">
-                  {item.label}
-                </Link>
-              );
-            })}
-          </div>
+            {/* RIGHT */}
+            <div className="flex items-center gap-4">
+              {/* AUDIO – desktop only */}
+              <button
+                onClick={toggleAudioIndicator}
+                className="hidden md:flex items-center gap-1"
+              >
+                <audio ref={audioElementRef} src="/audio/loop.mp3" loop />
+                {[1, 2, 3, 4].map((bar) => (
+                  <div
+                    key={bar}
+                    className={clsx("indicator-line", {
+                      active: isIndicatorActive,
+                    })}
+                    style={{ animationDelay: `${bar * 0.1}s` }}
+                  />
+                ))}
+              </button>
 
-          {/* RIGHT */}
-          <button
-            onClick={toggleAudioIndicator}
-            className="flex items-center gap-1"
-          >
-            <audio ref={audioElementRef} src="/audio/loop.mp3" loop />
-            {[1, 2, 3, 4].map((bar) => (
-              <div
-                key={bar}
-                className={clsx("indicator-line", {
-                  active: isIndicatorActive,
+              {/* MOBILE TOGGLE */}
+              <button
+                onClick={() => setIsMobileOpen((p) => !p)}
+                className="md:hidden"
+              >
+                {isMobileOpen ? (
+                  <HiXMark className="h-10 w-10 text-white" />
+                ) : (
+                  <HiBars3 className="h-10 w-10 text-white" />
+                )}
+              </button>
+            </div>
+          </nav>
+        </header>
+      </div>
+
+      {/* MOBILE MENU */}
+      {isMobileOpen && (
+        <div className="fixed inset-0 z-40 bg-black/90 pt-24 px-6 text-white">
+          <nav className="flex flex-col gap-6 uppercase">
+            <Link to="/" onClick={handleHomeClick}>
+              Home
+            </Link>
+
+            <Link to="/#about" onClick={() => setIsMobileOpen(false)}>
+              About
+            </Link>
+
+            {/* SERVICES */}
+            <button
+              onClick={() => setIsMobileServicesOpen((p) => !p)}
+              className="flex items-center justify-between"
+            >
+              SERVICES
+              <HiChevronDown
+                className={clsx("transition", {
+                  "rotate-180": isMobileServicesOpen,
                 })}
-                style={{ animationDelay: `${bar * 0.1}s` }}
               />
-            ))}
-          </button>
-        </nav>
-      </header>
-    </div>
+            </button>
+
+            {isMobileServicesOpen && (
+              <div className="ml-4 flex flex-col gap-4 text-sm text-white/70">
+                {serviceItems.map((s, i) => (
+                  <Link
+                    key={i}
+                    to={s.to}
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            <Link to="/#reviews" onClick={() => setIsMobileOpen(false)}>
+              Reviews
+            </Link>
+            <Link to="/#contacts" onClick={() => setIsMobileOpen(false)}>
+              Contacts
+            </Link>
+          </nav>
+        </div>
+      )}
+    </>
   );
 };
 
