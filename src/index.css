@@ -277,5 +277,9 @@ body {
 }
 
 .wedding-hero-heading {
-  @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-5xl md:text-7xl lg:text-8xl;
+  @apply uppercase font-circular-web font-black text-3xl sm:right-10 sm:text-3xl md:text-4xl lg:text-6xl;
+}
+.portraits-hero-heading {
+  @apply special-font font-zentry uppercase text-5xl md:text-6xl lg:text-8xl
+    leading-tight;
 }
