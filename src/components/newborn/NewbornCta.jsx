@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NewbornCta = () => {
+const NewbornCTA = () => {
   return (
     <section className="min-h-screen flex items-center justify-center">
       <h1 className="text-4xl font-light">Newborn CTA</h1>
@@ -8,4 +8,4 @@ const NewbornCta = () => {
   )
 }
 
-export default NewbornCta
+export default NewbornCTA

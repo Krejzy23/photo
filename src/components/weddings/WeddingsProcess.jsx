@@ -1,7 +1,7 @@
 import React from "react";
 import { FiMail, FiCalendar, FiCamera, FiImage } from "react-icons/fi";
 
-const steps = [
+const weddingSteps = [
   {
     title: "Contact & consultation",
     description:
@@ -52,7 +52,7 @@ const WeddingsProcess = () => {
           {/* Line */}
           <div className="absolute left-6 top-0 h-full w-px bg-black/10 md:left-0 md:top-1/2 md:h-px md:w-full md:-mt-5" />
 
-          {steps.map((step, index) => (
+          {weddingSteps.map((step, index) => (
             <div
               key={index}
               className="relative z-10 flex flex-col items-start md:w-1/4 md:items-center"

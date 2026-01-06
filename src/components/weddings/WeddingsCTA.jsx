@@ -10,7 +10,7 @@ const WeddingsCTA = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/images/weddings/cta.jpg')",
+          backgroundImage: "url('/img/weddingCta.webp')",
         }}
       />
 

@@ -1,16 +1,16 @@
-const images = [
-  { src: "/img/newbornGallery/newborn-1.jpg", ratio: "portrait" },
-  { src: "/img/newbornGallery/newborn-2.jpg", ratio: "square" },
-  { src: "/img/newbornGallery/newborn-3.jpg", ratio: "landscape" },
-  { src: "/img/newbornGallery/newborn-4.jpg", ratio: "square" },
-  { src: "/img/newbornGallery/newborn-5.jpg", ratio: "portrait" },
+export const newbornImages = [
+  "/img/newbornGallery/newbornGallery-01.webp",
+  "/img/newbornGallery/newbornGallery-02.webp",
+  "/img/newbornGallery/newbornGallery-03.webp",
+  "/img/newbornGallery/newbornGallery-04.webp",
+  "/img/newbornGallery/newbornGallery-05.webp",
+  "/img/newbornGallery/newbornGallery-06.webp",
 ];
 
 const NewbornGallery = () => {
   return (
     <section className="bg-white py-28 px-6">
       <div className="mx-auto max-w-6xl">
-
         {/* Intro */}
         <div className="mb-20 max-w-xl">
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#888]">
@@ -22,24 +22,18 @@ const NewbornGallery = () => {
         </div>
 
         {/* Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {images.map((img, i) => (
-            <div
-              key={i}
-              className={`
-                overflow-hidden rounded-2xl
-                ${img.ratio === "portrait" ? "aspect-[3/4]" : ""}
-                ${img.ratio === "landscape" ? "aspect-[4/3]" : ""}
-                ${img.ratio === "square" ? "aspect-square" : ""}
-              `}
-            >
-              <img
-                src={img.src}
-                alt="Newborn photography"
-                className="h-full w-full object-cover transition duration-700 hover:scale-105"
-              />
-            </div>
-          ))}
+        <div className="mx-auto max-w-9xl">
+          <div className="columns-1 gap-4 sm:columns-2 md:columns-3">
+            {newbornImages.map((src, i) => (
+              <div key={i} className="overflow-hidden mb-4 rounded-2xl">
+                <img
+                  src={src}
+                  alt="Newborn photography"
+                  className="w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
