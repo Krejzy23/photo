@@ -283,3 +283,9 @@ body {
   @apply special-font font-zentry uppercase text-5xl md:text-6xl lg:text-8xl
     leading-tight;
 }
+.background-text-story {
+  @apply pointer-events-none absolute left-1/2 top-20 -translate-x-1/2 -translate-y-1/2 max-w-full whitespace-nowrap font-bold uppercase tracking-widest text-cyan-400 opacity-[0.1]
+}
+.background-text-gallery {
+  @apply pointer-events-none absolute left-2/3 -translate-x-1/2 -translate-y-1/2 max-w-full whitespace-nowrap font-bold uppercase tracking-widest text-cyan-400 opacity-[0.1]
+}

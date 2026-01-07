@@ -28,21 +28,7 @@ const PortraitsStory = () => {
       className="relative h-[60vh] bg-[#091017] px-6 py-32 md:px-20"
     >
       <div
-        className="
-        pointer-events-none
-        absolute
-        left-1/2
-        top-20
-        -translate-x-1/2
-        -translate-y-1/2
-        max-w-full
-        whitespace-nowrap
-        font-bold
-        uppercase
-        tracking-widest
-        text-white
-        opacity-[0.035]
-      "
+        className="background-text-story"
         style={{ fontSize: "clamp(4rem, 20vw, 15rem)" }}
       >
         STORIES

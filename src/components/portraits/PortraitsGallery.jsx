@@ -54,46 +54,54 @@ const PortraitsGallery = () => {
         <img
           src={images[0]}
           className="h-[60vh] w-full rounded-3xl object-cover"
-          alt=""
+          alt="girl with glasess"
         />
       </div>
 
       {/* 2️⃣ + 3️⃣ OVERLAP */}
-      <div className="relative mb-48 flex flex-col md:flex-row gap-20">
+      <div className="relative mb-28 flex flex-col md:flex-row gap-20">
         <img
           src={images[1]}
           className="gallery-item w-full md:w-1/2 rounded-3xl object-cover"
-          alt=""
+          alt="girl with butterfly"
         />
         <img
           src={images[2]}
           className="gallery-item md:absolute md:right-0 md:top-32 w-full md:w-[45%] rounded-3xl object-cover shadow-2xl"
-          alt=""
+          alt="random man"
         />
       </div>
 
       {/* 4️⃣ TEXT PAUSE */}
-      <div className="mb-28 max-w-xl text-white/60 text-xl md:text-4xl leading-relaxed">
-        A portrait is not made in a moment. It appears — when the subject stops
-        performing.
+      <div className="mb-32 max-w-xl text-white/60 text-xl md:text-4xl leading-relaxed">
+        <h2>
+          A portrait is not made in a moment.<br/> 
+          It appears — when the subject stops performing.
+        </h2>
+        <div
+          className="background-text-gallery"
+          style={{ fontSize: "clamp(4rem, 20vw, 16rem)" }}
+        >
+          ART
+        </div>
       </div>
 
       {/* 5️⃣ 6️⃣ 7️⃣ OFFSET TRIPTYCH */}
-      <div className="mb-28 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         <img
           src={images[3]}
           className="gallery-item rounded-3xl object-cover md:translate-y-24"
-          alt=""
+          alt="flower girl"
         />
         <img
           src={images[4]}
           className="gallery-item rounded-3xl object-cover"
-          alt=""
+          alt="coat girl"
         />
         <img
           src={images[5]}
           className="gallery-item rounded-3xl object-cover md:-translate-y-20"
-          alt=""
+          alt="frame girl"
         />
       </div>
 
@@ -103,16 +111,16 @@ const PortraitsGallery = () => {
           <img
             src={images[7]}
             className="rounded-3xl object-cover w-full"
-            alt=""
+            alt="body art girl"
           />
         </div>
         <div className="mb-28 mx-auto md:-mt-52 max-w-md">
-          <img src={images[6]} className="rounded-3xl object-cover" alt="" />
+          <img src={images[6]} className="rounded-3xl object-cover" alt="ginger girl" />
         </div>
       </div>
 
       <div className="gallery-item mx-auto max-w-4xl">
-        <img src={images[8]} className="rounded-3xl object-cover" alt="" />
+        <img src={images[8]} className="rounded-3xl object-cover" alt="family" />
       </div>
     </section>
   );

@@ -37,7 +37,7 @@ const PortraitsHero = () => {
       {/* CONTENT */}
       <div className="relative z-10 flex h-full items-start">
         <div
-          className="w-full max-w-4xl px-6 sm:px-10 md:px-20 pt-44  md:pt-40"
+          className="w-full max-w-4xl px-6 sm:px-10 md:px-20 pt-44 md:pt-40"
         >
           <h1 className="portraits-hero-heading mb-6 text-blue-100">
             N<b>o</b>t every<b>o</b>ne w<b>a</b>nts <br /> to l<b>oo</b>k nice
@@ -54,11 +54,7 @@ const PortraitsHero = () => {
 
           <button
             ref={buttonRef}
-            className="
-              rounded-lg bg-white px-6 py-3
-              font-semibold text-black
-              transition hover:bg-cyan-400 hover:text-white
-            "
+            className="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-black"
           >
             Book a session
           </button>
