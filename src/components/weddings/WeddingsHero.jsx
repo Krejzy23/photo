@@ -36,7 +36,7 @@ const WeddingsHero = () => {
   });
 
   return (
-    <section className="relative h-dvh w-screen overflow-x-hidden">
+    <section className="relative h-dvh w-screen overflow-hidden">
       <div
         id="hero-frame"
         className="relative h-dvh w-screen z-10 overflow-hidden"

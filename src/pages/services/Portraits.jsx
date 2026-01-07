@@ -7,7 +7,7 @@ import PortraitsServices from "../../components/portraits/PortraitsServices";
 
 const Portraits = () => {
     return (
-      <main className="bg-black text-white">
+      <main className="bg-[#091017] text-white">
         <PortraitsHero />
         <PortraitsStory />
         <PortraitsGallery />
