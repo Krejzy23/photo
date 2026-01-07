@@ -40,7 +40,7 @@ const PortraitsGallery = () => {
       className="relative px-6 py-32 md:px-20 overflow-hidden"
     >
       {/* HEADER */}
-      <div className="mb-32 max-w-2xl">
+      <div className="mb-24 max-w-2xl">
         <p className="mb-3 text-xs uppercase tracking-widest text-white/40">
           #Selected work
         </p>
@@ -50,7 +50,7 @@ const PortraitsGallery = () => {
       </div>
 
       {/* 1️⃣ HERO */}
-      <div className="gallery-item mb-40">
+      <div className="gallery-item mb-24">
         <img
           src={images[0]}
           className="h-[60vh] w-full rounded-3xl object-cover"
@@ -79,10 +79,10 @@ const PortraitsGallery = () => {
           It appears — when the subject stops performing.
         </h2>
         <div
-          className="background-text-gallery"
+          className="background-text-gallery font-zentry special-font"
           style={{ fontSize: "clamp(4rem, 20vw, 16rem)" }}
         >
-          ART
+          <b>A</b>RT
         </div>
       </div>
 

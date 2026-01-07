@@ -28,10 +28,10 @@ const PortraitsStory = () => {
       className="relative h-[60vh] bg-[#091017] px-6 py-32 md:px-20"
     >
       <div
-        className="background-text-story"
-        style={{ fontSize: "clamp(4rem, 20vw, 15rem)" }}
+        className="background-text-story font-zentry special-font mt-10"
+        style={{ fontSize: "clamp(4rem, 20vw, 20rem)" }}
       >
-        STORIES
+        P<b>O</b>RTR<b>A</b>ITS
       </div>
       <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-16 md:grid-cols-2">
         {/* LEFT */}
