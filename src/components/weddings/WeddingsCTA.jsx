@@ -19,8 +19,8 @@ const WeddingsCTA = () => {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center text-white">
-        <h2 className="special-font font-zentry text-4xl md:text-6xl">
-          Let’s tell y<b>o</b>ur st<b>o</b>ry.
+        <h2 className="font-bold font-circular-web text-4xl md:text-6xl">
+          Let’s tell your story.
         </h2>
 
         <p className="mt-6 max-w-xl text-white/80">

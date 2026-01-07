@@ -18,8 +18,8 @@ const WeddingsFAQ = () => {
           <p className="font-general text-sm uppercase text-black/60">
             #FAQ
           </p>
-          <h2 className="special-font font-zentry mt-4 text-4xl md:text-6xl text-black">
-            C<b>o</b>mm<b>o</b>n <b>q</b>uesti<b>o</b>ns
+          <h2 className="font-bold font-circular-web mt-4 text-4xl md:text-6xl text-black uppercase">
+            Common questions
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-black/70">
             Everything you need to know before your wedding day.

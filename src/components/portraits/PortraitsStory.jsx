@@ -45,7 +45,7 @@ const PortraitsStory = () => {
       "
         style={{ fontSize: "clamp(4rem, 20vw, 15rem)" }}
       >
-        STORY
+        STORIES
       </div>
       <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-16 md:grid-cols-2">
         {/* LEFT */}

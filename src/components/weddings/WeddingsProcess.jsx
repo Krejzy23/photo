@@ -38,8 +38,8 @@ const WeddingsProcess = () => {
           <p className="font-general text-sm uppercase text-black/60">
             #The process
           </p>
-          <h2 className="special-font mt-4 font-zentry text-4xl md:text-6xl text-black">
-            H<b>o</b>w it w<b>o</b>rks
+          <h2 className="font-bold font-circular-web uppercase mt-4 text-4xl md:text-6xl text-black">
+            How it works
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-black/70">
             A simple and transparent process designed to make you feel calm and confident.

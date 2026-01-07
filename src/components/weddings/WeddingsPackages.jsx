@@ -13,8 +13,8 @@ const WeddingsPackages = () => {
           <p className="font-general text-sm uppercase text-black/60">
             #Wedding packages
           </p>
-          <h2 className="special-font font-zentry mt-4 text-4xl md:text-6xl text-black">
-            Simple, tr<b>a</b>nsp<b>a</b>rent p<b>a</b>ck<b>a</b>ges
+          <h2 className="font-bold font-circular-web mt-4 text-4xl md:text-6xl text-black">
+            Simple, transparent packages
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-black/70">
             Choose the package that best fits your wedding day.

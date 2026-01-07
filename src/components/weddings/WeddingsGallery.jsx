@@ -22,7 +22,7 @@ const WeddingsGallery = () => {
         <p className="font-general text-sm uppercase md:text-[10px]">
           #Gallery
         </p>
-        <h2 className="special-font font-zentry text-4xl md:text-6xl text-black">
+        <h2 className="text-4xl md:text-6xl text-black">
             Wedding photography filled with emotion.
           </h2>
 

@@ -8,6 +8,9 @@ const images = [
   "/img/portraitsGallery/portraitsGallery-04.jpg",
   "/img/portraitsGallery/portraitsGallery-05.jpg",
   "/img/portraitsGallery/portraitsGallery-06.jpg",
+  "/img/portraitsGallery/portraitsGallery-07.jpg",
+  "/img/portraitsGallery/portraitsGallery-08.jpg",
+  "/img/portraitsGallery/portraitsGallery-09.jpg",
 ];
 
 const PortraitsGallery = () => {
@@ -15,17 +18,17 @@ const PortraitsGallery = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      sectionRef.current.querySelectorAll(".portrait-item"),
-      { opacity: 0, y: 60 },
+      sectionRef.current.querySelectorAll(".gallery-item"),
+      { opacity: 0, y: 70 },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 1.1,
         ease: "power2.out",
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 75%",
         },
       }
     );
@@ -34,37 +37,82 @@ const PortraitsGallery = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative px-6 py-32 md:px-20"
+      className="relative px-6 py-32 md:px-20 overflow-hidden"
     >
       {/* HEADER */}
-      <div className="mb-20 max-w-2xl">
+      <div className="mb-32 max-w-2xl">
         <p className="mb-3 text-xs uppercase tracking-widest text-white/40">
           #Selected work
         </p>
         <h2 className="special-font text-4xl md:text-6xl text-white">
-          Portrait gallery
+          Portraits
         </h2>
       </div>
 
-      {/* GRID */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {images.map((src, i) => (
-          <div
-            key={i}
-            className={`portrait-item group relative overflow-hidden rounded-3xl ${
-              i % 3 === 0 ? "lg:col-span-2 lg:row-span-2" : ""
-            }`}
-          >
-            <img
-              src={src}
-              alt=""
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
+      {/* 1️⃣ HERO */}
+      <div className="gallery-item mb-40">
+        <img
+          src={images[0]}
+          className="h-[60vh] w-full rounded-3xl object-cover"
+          alt=""
+        />
+      </div>
 
-            {/* OVERLAY */}
-            <div className="pointer-events-none absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          </div>
-        ))}
+      {/* 2️⃣ + 3️⃣ OVERLAP */}
+      <div className="relative mb-48 flex flex-col md:flex-row gap-20">
+        <img
+          src={images[1]}
+          className="gallery-item w-full md:w-1/2 rounded-3xl object-cover"
+          alt=""
+        />
+        <img
+          src={images[2]}
+          className="gallery-item md:absolute md:right-0 md:top-32 w-full md:w-[45%] rounded-3xl object-cover shadow-2xl"
+          alt=""
+        />
+      </div>
+
+      {/* 4️⃣ TEXT PAUSE */}
+      <div className="mb-28 max-w-xl text-white/60 text-xl md:text-4xl leading-relaxed">
+        A portrait is not made in a moment. It appears — when the subject stops
+        performing.
+      </div>
+
+      {/* 5️⃣ 6️⃣ 7️⃣ OFFSET TRIPTYCH */}
+      <div className="mb-28 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <img
+          src={images[3]}
+          className="gallery-item rounded-3xl object-cover md:translate-y-24"
+          alt=""
+        />
+        <img
+          src={images[4]}
+          className="gallery-item rounded-3xl object-cover"
+          alt=""
+        />
+        <img
+          src={images[5]}
+          className="gallery-item rounded-3xl object-cover md:-translate-y-20"
+          alt=""
+        />
+      </div>
+
+      {/* 8️⃣ VERTICAL MOMENT */}
+      <div className="gallery-item flex flex-col md:flex-row">
+        <div className="mb-28 mx-auto max-w-2xl">
+          <img
+            src={images[7]}
+            className="rounded-3xl object-cover w-full"
+            alt=""
+          />
+        </div>
+        <div className="mb-28 mx-auto md:-mt-52 max-w-md">
+          <img src={images[6]} className="rounded-3xl object-cover" alt="" />
+        </div>
+      </div>
+
+      <div className="gallery-item mx-auto max-w-4xl">
+        <img src={images[8]} className="rounded-3xl object-cover" alt="" />
       </div>
     </section>
   );

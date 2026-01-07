@@ -41,7 +41,7 @@ const WeddingsHero = () => {
         id="hero-frame"
         className="relative h-dvh w-screen z-10 overflow-hidden"
       >
-        <h1 className="special-font wedding-hero-heading absolute bottom-16 right-8 md:bottom-10 md:right-10 z-40 text-blue-100">
+        <h1 className="wedding-hero-heading absolute bottom-16 right-8 md:bottom-10 md:right-10 z-40 text-blue-100">
           Wedding
         </h1>
         {/* HERO IMAGE */}
