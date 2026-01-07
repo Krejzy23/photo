@@ -25,7 +25,7 @@ const PortraitsStory = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[50vh] bg-[#091017] px-6 py-32 md:px-20"
+      className="relative h-[60vh] bg-[#091017] px-6 py-32 md:px-20"
     >
       <div
         className="
