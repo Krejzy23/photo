@@ -2,21 +2,21 @@ export const footerColumns = [
   {
     title: "Explore",
     links: [
-      { label: "Home", href: "#home" },
-      { label: "About", href: "#about" },
-      { label: "Services", href: "#services" },
-      { label: "Contacts", href: "#contact" },
-      { label: "Reviews", href: "#reviews" },
+      { label: "Home", href: "/" },
+      { label: "About", href: "/#about" },
+      { label: "Services", href: "/#services" },
+      { label: "Reviews", href: "/#reviews" },
+      { label: "Contacts", href: "/#contact" },
     ],
   },
   {
     title: "Services",
     links: [
-      { label: "Kids ", href: "#" },
-      { label: "Family ", href: "#" },
-      { label: "Product ", href: "#" },
-      { label: "Outdoor ", href: "#" },
-      { label: "Weddings", href: "#" },
+      { label: "Weddings ", href: "/services/weddings" },
+      { label: "Newborn ", href: "/services/newborn" },
+      { label: "Portraits ", href: "/services/newborn" },
+      { label: "Products", href: "/services/products" },
+      { label: "Studio", href: "/services/products" },
     ],
   },
   {
@@ -126,6 +126,7 @@ export const serviceItems = [
   { label: "Newborn", to: "/services/newborn" },
   { label: "Portraits", to: "/services/portraits" },
   { label: "Products", to: "/services/products" },
+  { label: "Studio", to: "/services/studio" },
 ];
 
 export const newbornPackages = [
@@ -211,5 +212,23 @@ export const portraitsServices = [
   {
     title: "Retouch & post-production",
     desc: "Natural retouching with attention to skin, light and texture.",
+  },
+];
+
+export const testimonials = [
+  {
+    text: "We never felt like we were posing. Everything felt natural — like the day itself.",
+    author: "Anna & Thomas",
+    type: "Wedding",
+  },
+  {
+    text: "The calmness during the session surprised us. Our baby slept through almost everything.",
+    author: "Elizabeth",
+    type: "Newborn",
+  },
+  {
+    text: "For the first time, I enjoyed being photographed. Actually liked how I look in photos.",
+    author: "David",
+    type: "Portrait",
   },
 ];

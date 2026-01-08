@@ -113,7 +113,7 @@ export const BentoCard = ({ src, title, description, isComingSoon, to }) => {
 
 const Features = () => {
   return (
-    <section className="bg-black pb-52">
+    <section id="services" className="bg-black pb-52">
       <div className="container mx-auto px-3 md:px-10">
         <div className="flex flex-col md:flex-row justify-between py-20 px-5">
           <p className="font-circular-web font-bold text-xl md:text-4xl text-blue-50">

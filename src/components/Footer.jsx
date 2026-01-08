@@ -19,8 +19,8 @@ const Footer = () => {
         {/* Links */}
         <div className="grid grid-cols-2 gap-10 text-sm md:grid-cols-4">
           {footerColumns.map((column, index) => (
-            <div key={index}>
-              <h3 className="mb-4 text-xs uppercase tracking-widest text-white/40">
+            <div key={index} className="flex flex-col items-center justify-center">
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white">
                 {column.title}
               </h3>
               <ul className="space-y-3">
@@ -41,7 +41,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="mt-20 border-t border-white/10 pt-6 text-center text-xs text-white/40">
-          © {new Date().getFullYear()} Aleš Krejzl · Wedding & Lifestyle Photography
+          © {new Date().getFullYear()} Aleš Krejzl · Photography Service
         </div>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { useRef } from "react";
 import Button from "./Button";
-import AnimatedTitle from "./AnimatedTitle"
+import AnimatedTitle from "./AnimatedTitle";
 import { TiMap } from "react-icons/ti";
 
 const FloatingImage = () => {
@@ -20,15 +20,16 @@ const FloatingImage = () => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((yPos - centerY) / centerY) * -10;
-    const rotateY = ((xPos - centerX) / centerX) * 10;
+    const rotateX = ((yPos - centerY) / centerY) * -6;
+    const rotateY = ((xPos - centerX) / centerX) * 6;
 
     gsap.to(element, {
       duration: 0.3,
       rotateX,
       rotateY,
-      transformPerspective: 500,
-      ease: "power1.inOut",
+      scale: 1.02,
+      transformPerspective: 800,
+      ease: "power2.out",
     });
   };
 
@@ -46,7 +47,7 @@ const FloatingImage = () => {
   };
 
   return (
-    <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
+    <div id="story" className="min-h-dvh w-screen bg-blue-50 text-black">
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
           welcome to our studio
@@ -107,15 +108,25 @@ const FloatingImage = () => {
 
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
-            <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-              Where creativity meets precision, our photo studio captures moments that tell your unique story. Explore endless possibilities and let us bring your vision to life.
+            <p className="mt-4 max-w-md text-center md:text-start font-circular-web text-lg leading-snug text-black">
+              <span className="font-medium">
+                Where creativity meets precision,
+              </span>{" "}
+              our photo studio captures moments that tell your unique story.
+              <span className="block mt-2 text-black/70">
+                Explore endless possibilities and let us bring your vision to
+                life.
+              </span>
+            </p>
+            <p className="mt-4 text-xs uppercase tracking-widest text-black/50">
+              Natural light · Calm space · Creative atmosphere
             </p>
 
             <Button
               id="realm-btn"
-              title="copy Adress"
+              title="Copy studio address"
               containerClass="mt-5 flex-center gap-2"
-              leftIcon={<TiMap/>}
+              leftIcon={<TiMap />}
             />
           </div>
         </div>
