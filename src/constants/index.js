@@ -194,3 +194,22 @@ export const newbornFaqs = [
     a: "Absolutely. Parents and siblings are always welcome to join and create family memories.",
   },
 ];
+
+export const portraitsServices = [
+  {
+    title: "Portrait sessions",
+    desc: "Personal, calm portrait sessions focused on emotion and presence.",
+  },
+  {
+    title: "Editorial portraits",
+    desc: "Strong visual stories for magazines, creatives and brands.",
+  },
+  {
+    title: "Creative direction",
+    desc: "Mood, styling and visual identity tailored to your vision.",
+  },
+  {
+    title: "Retouch & post-production",
+    desc: "Natural retouching with attention to skin, light and texture.",
+  },
+];

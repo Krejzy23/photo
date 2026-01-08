@@ -8,7 +8,7 @@ const Footer = () => {
 
         {/* Brand */}
         <div className="mb-16 text-center">
-          <h2 className="special-font font-zentry text-3xl text-white">
+          <h2 className="special-font font-zentry text-5xl text-white">
             PH<b>O</b>T<b>O</b>GR<b>A</b>PHY
           </h2>
           <p className="mt-4 text-sm text-white/50">

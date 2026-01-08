@@ -1,25 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { GiCheckMark } from "react-icons/gi";
 import { gsap } from "gsap";
-
-const services = [
-  {
-    title: "Portrait sessions",
-    desc: "Personal, calm portrait sessions focused on emotion and presence.",
-  },
-  {
-    title: "Editorial portraits",
-    desc: "Strong visual stories for magazines, creatives and brands.",
-  },
-  {
-    title: "Creative direction",
-    desc: "Mood, styling and visual identity tailored to your vision.",
-  },
-  {
-    title: "Retouch & post-production",
-    desc: "Natural retouching with attention to skin, light and texture.",
-  },
-];
+import { portraitsServices } from "../../constants";
 
 const PortraitServices = () => {
   const sectionRef = useRef(null);
@@ -36,7 +18,7 @@ const PortraitServices = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 75%",
+          start: "top 55%",
         },
       }
     );
@@ -45,19 +27,19 @@ const PortraitServices = () => {
   return (
     <section ref={sectionRef} className="relative px-6 py-40 md:px-20">
       {/* LEFT – BIG WORD */}
-      <div className="sticky h-fit mb-10">
+      <div className="sticky h-fit pointer-events-none">
         <h2 className="font-zentry special-font text-cyan-400 text-[18vw] leading-none opacity-[0.1]">
           S<b>e</b>r<b>v</b>ic<b>e</b>s
         </h2>
       </div>
       <div className="grid md:grid-cols-2">
-        <div className="mb-12 flex items-end gap-8">
+        <div className="mb-12 -mt-40 flex items-end gap-8">
           <div>
             <p className="text-xs uppercase tracking-widest text-white/40">
               #Portrait services
             </p>
             <h2 className="font-circular-web mb-10 text-4xl md:text-6xl text-white leading-relaxed tracking-widest">
-              What I offer
+              What I Offer
             </h2>
             <img
               src="/img/portraitsGallery/portraitsCTA.webp"
@@ -69,7 +51,7 @@ const PortraitServices = () => {
 
         {/* RIGHT – LIST */}
         <div className="flex flex-col gap-14">
-          {services.map((s, i) => (
+          {portraitsServices.map((s, i) => (
             <div
               key={i}
               className="service-item group border-b border-white/10 pb-10"

@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { ScrollTrigger} from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
@@ -7,30 +7,33 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ImageClipBox = ({ src, clipClass , width, height }) => (
+const ImageClipBox = ({ src, clipClass, width, height }) => (
   <div className={clipClass}>
-    <img src={src} width={width} height={height} alt={`Image for ${src}`}/>
+    <img src={src} width={width} height={height} alt={`Image for ${src}`} />
   </div>
 );
 
 const Contact = () => {
   useGSAP(() => {
     gsap.to("#contact", {
-      backgroundColor: "#FC2207", // Barva pozadí (Tailwind: bg-yellow-50)
+      backgroundColor: "#0B1520", // Barva pozadí (Tailwind: bg-yellow-50)
       scrollTrigger: {
         trigger: "#contact",
-        start: "top center", // Kdy začít 
+        start: "top center", // Kdy začít
         end: "bottom center", // Kdy skončit
         toggleActions: "play none none reverse", // Animace při scrollování
         onLeave: () => gsap.to("#contact", { backgroundColor: "#000000" }), // Návrat na černou
-        onLeaveBack: () => gsap.to("#contact", { backgroundColor: "#FC2207" }),
+        onLeaveBack: () => gsap.to("#contact", { backgroundColor: "#10151C" }),
       },
     });
   }, []);
 
   return (
-    <div className="my-20 min-h-96 w-screen px-10 bg-blue-50">
-      <div id="contact" className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
+    <div className="my-32 min-h-96 w-screen px-6 md:px-12 bg-blue-50">
+      <div
+        id="contact"
+        className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden"
+      >
         <div className="absolute -left-20 -top-40 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
             src="/img/contact-2.jpg"
@@ -60,7 +63,7 @@ const Contact = () => {
 
         <div className="flex flex-col items-center text-center">
           <p className="mb-10 text-blue-50 font-general text-[10px] uppercase">
-            Contact Us
+            Contact
           </p>
 
           <AnimatedTitle
@@ -68,7 +71,10 @@ const Contact = () => {
             className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
           />
 
-          <Button title="contact us" containerClass="mt-10 cursor-pointer" />
+          <Button
+            title="contact"
+            containerClass="mt-10 bg-white text-black hover:bg-black hover:text-white transition-all"
+          />
         </div>
       </div>
     </div>
