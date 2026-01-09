@@ -13,37 +13,38 @@ const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-
+  
+  
   // MOBILE
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-
+  
   const location = useLocation();
   const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
-
+  
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
+  
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((p) => !p);
     setIsIndicatorActive((p) => !p);
   };
-
+  
   const handleHomeClick = () => {
     if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setIsMobileOpen(false);
   };
-
+  
   useEffect(() => {
     isAudioPlaying
-      ? audioElementRef.current?.play()
-      : audioElementRef.current?.pause();
+    ? audioElementRef.current?.play()
+    : audioElementRef.current?.pause();
   }, [isAudioPlaying]);
-
+  
   useEffect(() => {
     if (currentScrollY === 0) {
       // Topmost position: show navbar without floating-nav
@@ -58,9 +59,12 @@ const Navbar = () => {
       setIsNavVisible(true);
       navContainerRef.current.classList.add("floating-nav");
     }
-
+    
     setLastScrollY(currentScrollY);
   }, [currentScrollY, lastScrollY]);
+  
+  const shouldHaveBackground =
+  currentScrollY > 0 || isServicesOpen || isMobileOpen;
 
   useEffect(() => {
     gsap.to(navContainerRef.current, {
@@ -71,12 +75,25 @@ const Navbar = () => {
     });
   }, [isNavVisible]);
 
+  useEffect(() => {
+    if (currentScrollY > 20) {
+      setIsServicesOpen(false);
+      setIsMobileServicesOpen(false);
+      setIsMobileOpen(false);
+    }
+  }, [currentScrollY]);
+  
   return (
     <>
       {/* NAVBAR */}
       <div
         ref={navContainerRef}
-        className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
+        className={clsx(
+          "fixed inset-x-0 top-4 z-50 h-16 transition-all duration-300 sm:inset-x-6",
+          {
+            "floating-nav": shouldHaveBackground,
+          }
+        )}
       >
         <header className="absolute top-1/2 w-full -translate-y-1/2">
           <nav className="flex h-full items-center justify-between px-6 ">
@@ -108,7 +125,7 @@ const Navbar = () => {
                       </button>
 
                       {isServicesOpen && (
-                        <div className="absolute left-20 top-full mt-5 -translate-x-1/2 bg-black px-6 py-3 backdrop-blur-md rounded-b-lg">
+                        <div className="absolute left-20 top-full mt-5 -translate-x-1/2 bg-black/80 px-6 py-3 backdrop-blur-lg rounded-b-lg">
                           <div className="flex flex-col gap-6">
                             {serviceItems.map((service, i) => (
                               <Link

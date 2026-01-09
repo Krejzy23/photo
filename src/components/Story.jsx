@@ -125,7 +125,7 @@ const FloatingImage = () => {
             <Button
               id="realm-btn"
               title="Copy studio address"
-              containerClass="mt-5 flex-center gap-2"
+              containerClass="mt-5 !bg-black flex-center gap-2 text-white hover:!bg-white hover:!text-black"
               leftIcon={<TiMap />}
             />
           </div>

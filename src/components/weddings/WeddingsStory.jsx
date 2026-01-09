@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedTitle from "../AnimatedTitle";
+
 
 const WeddingsStory = () => {
   return (

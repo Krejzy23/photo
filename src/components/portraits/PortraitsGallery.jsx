@@ -1,17 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { portraitsImages } from "../../constants";
 
-const images = [
-  "/img/portraitsGallery/portraitsGallery-01.jpg",
-  "/img/portraitsGallery/portraitsGallery-02.jpg",
-  "/img/portraitsGallery/portraitsGallery-03.jpg",
-  "/img/portraitsGallery/portraitsGallery-04.jpg",
-  "/img/portraitsGallery/portraitsGallery-05.jpg",
-  "/img/portraitsGallery/portraitsGallery-06.jpg",
-  "/img/portraitsGallery/portraitsGallery-07.jpg",
-  "/img/portraitsGallery/portraitsGallery-08.jpg",
-  "/img/portraitsGallery/portraitsGallery-09.jpg",
-];
 
 const PortraitsGallery = () => {
   const sectionRef = useRef(null);
@@ -28,7 +18,7 @@ const PortraitsGallery = () => {
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 75%",
+          start: "top 10%",
         },
       }
     );
@@ -52,8 +42,8 @@ const PortraitsGallery = () => {
       {/* 1️⃣ HERO */}
       <div className="gallery-item mb-24">
         <img
-          src={images[0]}
-          className="h-[60vh] w-full rounded-3xl object-cover"
+          src={portraitsImages[0]}
+          className="h-auto md:h-[60vh] w-full rounded-3xl object-cover"
           alt="girl with glasess"
         />
       </div>
@@ -61,12 +51,12 @@ const PortraitsGallery = () => {
       {/* 2️⃣ + 3️⃣ OVERLAP */}
       <div className="relative mb-28 flex flex-col md:flex-row gap-20">
         <img
-          src={images[1]}
+          src={portraitsImages[1]}
           className="gallery-item w-full md:w-1/2 rounded-3xl object-cover"
           alt="girl with butterfly"
         />
         <img
-          src={images[2]}
+          src={portraitsImages[2]}
           className="gallery-item md:absolute md:right-0 md:top-32 w-full md:w-[45%] rounded-3xl object-cover shadow-2xl"
           alt="random man"
         />
@@ -89,17 +79,17 @@ const PortraitsGallery = () => {
       {/* 5️⃣ 6️⃣ 7️⃣ OFFSET TRIPTYCH */}
       <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         <img
-          src={images[3]}
-          className="gallery-item rounded-3xl object-cover md:translate-y-24"
+          src={portraitsImages[3]}
+          className="gallery-item  rounded-3xl object-cover md:translate-y-24"
           alt="flower girl"
         />
         <img
-          src={images[4]}
+          src={portraitsImages[4]}
           className="gallery-item rounded-3xl object-cover"
           alt="coat girl"
         />
         <img
-          src={images[5]}
+          src={portraitsImages[5]}
           className="gallery-item rounded-3xl object-cover md:-translate-y-20"
           alt="frame girl"
         />
@@ -109,18 +99,18 @@ const PortraitsGallery = () => {
       <div className="gallery-item flex flex-col md:flex-row">
         <div className="mb-28 mx-auto max-w-2xl">
           <img
-            src={images[7]}
+            src={portraitsImages[7]}
             className="rounded-3xl object-cover w-full"
             alt="body art girl"
           />
         </div>
         <div className="mb-28 mx-auto md:-mt-52 max-w-md">
-          <img src={images[6]} className="rounded-3xl object-cover" alt="ginger girl" />
+          <img src={portraitsImages[6]} className="w-full h-full rounded-3xl object-cover" alt="ginger girl" />
         </div>
       </div>
 
       <div className="gallery-item mx-auto max-w-4xl">
-        <img src={images[8]} className="rounded-3xl object-cover" alt="family" />
+        <img src={portraitsImages[8]} className="rounded-3xl object-cover" alt="family" />
       </div>
     </section>
   );

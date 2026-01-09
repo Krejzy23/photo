@@ -215,6 +215,18 @@ export const portraitsServices = [
   },
 ];
 
+export const portraitsImages = [
+  "/img/portraitsGallery/portraitsGallery-01.jpg",
+  "/img/portraitsGallery/portraitsGallery-02.jpg",
+  "/img/portraitsGallery/portraitsGallery-03.jpg",
+  "/img/portraitsGallery/portraitsGallery-04.jpg",
+  "/img/portraitsGallery/portraitsGallery-05.jpg",
+  "/img/portraitsGallery/portraitsGallery-06.jpg",
+  "/img/portraitsGallery/portraitsGallery-07.jpg",
+  "/img/portraitsGallery/portraitsGallery-08.jpg",
+  "/img/portraitsGallery/portraitsGallery-09.jpg",
+];
+
 export const testimonials = [
   {
     text: "We never felt like we were posing. Everything felt natural — like the day itself.",
