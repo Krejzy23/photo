@@ -80,7 +80,7 @@ const PortraitsGallery = () => {
       <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         <img
           src={portraitsImages[3]}
-          className="gallery-item  rounded-3xl object-cover md:translate-y-24"
+          className="gallery-item  rounded-3xl object-cover aspect-[3/4] md:aspect-auto md:translate-y-24"
           alt="flower girl"
         />
         <img
@@ -105,7 +105,7 @@ const PortraitsGallery = () => {
           />
         </div>
         <div className="mb-28 mx-auto md:-mt-52 max-w-md">
-          <img src={portraitsImages[6]} className="w-full h-full rounded-3xl object-cover" alt="ginger girl" />
+          <img src={portraitsImages[6]} className="w-full h-full aspect-[3/4] md:aspect-auto rounded-3xl object-cover" alt="ginger girl" />
         </div>
       </div>
 

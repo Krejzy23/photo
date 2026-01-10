@@ -26,10 +26,10 @@ const ProductPhotography = () => {
   }, []);
 
   return (
-    <main className="bg-black text-white ">
+    <main className="bg-black text-white">
       {/* HERO */}
       {/* HERO VIDEO */}
-      <section className="relative h-dvh w-full max-w-7xl overflow-hidden">
+      <section className="relative h-dvh w-full overflow-hidden">
         {/* VIDEO */}
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -45,13 +45,10 @@ const ProductPhotography = () => {
 
         {/* CONTENT */}
         <div className="relative mt-20 z-10 flex h-full flex-col px-6 md:px-20">
-          <p className="text-xs uppercase tracking-widest text-white/50">
-            Product photography
-          </p>
-          <h1 className="special-font hero-heading-product text-blue-100">
-            Visuals that
+          <h1 className="special-font mt-16 hero-heading-product text-blue-100">
+            Visu<b>a</b>ls th<b>a</b>t
             <br />
-            <b>s</b>ell your
+            sell yo<b>u</b>r
             <br />
             pr<b>o</b>duct
           </h1>
@@ -68,13 +65,16 @@ const ProductPhotography = () => {
       {/* GALLERY */}
       <section className="px-6 py-32 md:px-20">
         <AnimatedTitle
-          title="Latest product visuals"
-          containerClass="mb-16 max-w-5xl text-white"
+          title="Designed for attention"
+          containerClass="mb-16 text-white"
         />
+        <p className="mt-4 text-sm mb-2 uppercase tracking-widest text-white/40">
+          #product photography
+        </p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
           {/* MAIN */}
-          <div className="md:col-span-12 overflow-hidden rounded-2xl">
+          <div className="md:col-span-12 overflow-hidden md:h-[70vh] rounded-2xl">
             <img
               src="/img/products/product-main.jpg"
               alt="Product photography"
@@ -87,7 +87,7 @@ const ProductPhotography = () => {
             <img
               src="/img/products/product-detail-1.webp"
               alt="Product detail"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              className="h-full w-full md:h-[60vh] object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
 
@@ -96,7 +96,7 @@ const ProductPhotography = () => {
             <img
               src="/img/products/product-detail-2.webp"
               alt="Product detail"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              className="h-full w-full md:h-[60vh] object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
 
@@ -118,12 +118,19 @@ const ProductPhotography = () => {
             />
           </div>
 
+          <div
+            className="hidden md:flex font-zentry special-font whitespace-nowrap font-bold uppercase text-white opacity-[0.1]"
+            style={{ fontSize: "clamp(4rem, 20vw, 16rem)" }}
+          >
+            DET<b>A</b>IL
+          </div>
+
           {/* HORIZONTAL */}
           <div className="md:col-span-12 overflow-hidden rounded-2xl">
             <img
               src="/img/products/product-detail-5.jpg"
               alt="Product detail"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              className="h-full w-full object-cover md:h-[70vh] transition-transform duration-700 hover:scale-105"
             />
           </div>
         </div>
@@ -146,6 +153,59 @@ const ProductPhotography = () => {
             <li>• Branding</li>
             <li>• Social media</li>
           </ul>
+        </div>
+      </section>
+
+      {/* BRANDS */}
+      <section className="px-6 py-24 md:px-20">
+        <div className="mx-auto max-w-7xl text-center">
+          <p className="mb-10 text-sm uppercase tracking-widest text-white/50">
+            Selected brands & collaborations
+          </p>
+
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-6 items-center">
+            {[
+              "FOOD",
+              "COSMETICS",
+              "FASHION",
+              "EDITORIAL",
+              "DRINKS",
+              "TECH",
+            ].map((brand) => (
+              <div
+                key={brand}
+                className="flex justify-center text-white/40 font-semibold transition-opacity duration-300 hover:text-white/70 font-serif tracking-[0.2em]"
+              >
+                {brand}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="px-16 py-24 md:px-20">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-12 text-sm uppercase tracking-widest text-white/50">
+            #How I shoot products
+          </p>
+
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            {[
+              "Planning & concept",
+              "Lighting & styling",
+              "Shooting",
+              "Retouch & delivery",
+            ].map((step, i) => (
+              <div key={step} className="flex items-center gap-4">
+                {/* line */}
+                <span className="block h-px w-8 bg-white/20" />
+
+                {/* text */}
+                <span className="text-white/80 tracking-wide">{step}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>

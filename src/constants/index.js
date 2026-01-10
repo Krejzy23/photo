@@ -16,7 +16,7 @@ export const footerColumns = [
       { label: "Newborn ", href: "/services/newborn" },
       { label: "Portraits ", href: "/services/newborn" },
       { label: "Products", href: "/services/product-photography" },
-      { label: "Studio", href: "/services/products" },
+      { label: "Studio", href: "/services/studio" },
     ],
   },
   {
