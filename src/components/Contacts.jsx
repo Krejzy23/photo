@@ -16,7 +16,7 @@ const ImageClipBox = ({ src, clipClass, width, height }) => (
 const Contact = () => {
   useGSAP(() => {
     gsap.to("#contact", {
-      backgroundColor: "#0B1520", // Barva pozadí (Tailwind: bg-yellow-50)
+      backgroundColor: "#010101", // Barva pozadí (Tailwind: bg-yellow-50)
       scrollTrigger: {
         trigger: "#contact",
         start: "top center", // Kdy začít

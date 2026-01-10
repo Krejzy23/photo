@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Weddings from "./pages/services/Weddings";
 import Newborn from "./pages/services/Newborn";
 import Portraits from "./pages/services/Portraits";
+import ProductPhotography from "./components/ProductPhotography";
 import Studio from "./components/Studio";
 
 const App = () => {
@@ -19,7 +20,8 @@ const App = () => {
         <Route path="/services/newborn" element={<Newborn />} />
         <Route path="/services/portraits" element={<Portraits />} />
         <Route path="/services/studio" element={<Studio />} />
-        
+
+        <Route path="/services/product-photography" element={<ProductPhotography />} />
       </Routes>
 
       <Footer />

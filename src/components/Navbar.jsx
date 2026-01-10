@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useWindowScroll } from "react-use";
 import Button from "./Button";
 import CameraLogo from "./CameraLogo";
-import { TiLocationArrow } from "react-icons/ti";
+import { TiMail } from "react-icons/ti";
 import { HiBars3, HiXMark, HiChevronDown } from "react-icons/hi2";
 import { navItems, serviceItems } from "../constants";
 
@@ -102,9 +102,9 @@ const Navbar = () => {
               <CameraLogo className="transition h-10 w-10 text-white hover:rotate-6 hover:scale-110" />
 
               <Button
-                title="Contacts"
-                rightIcon={<TiLocationArrow />}
-                containerClass="!bg-blue-50 hidden md:flex items-center gap-1"
+                title="Contact"
+                rightIcon={<TiMail />}
+                containerClass="!bg-blue-50 hidden md:flex items-center gap-2"
               />
             </div>
 

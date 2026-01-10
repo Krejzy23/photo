@@ -15,7 +15,7 @@ export const footerColumns = [
       { label: "Weddings ", href: "/services/weddings" },
       { label: "Newborn ", href: "/services/newborn" },
       { label: "Portraits ", href: "/services/newborn" },
-      { label: "Products", href: "/services/products" },
+      { label: "Products", href: "/services/product-photography" },
       { label: "Studio", href: "/services/products" },
     ],
   },
@@ -125,7 +125,7 @@ export const serviceItems = [
   { label: "Weddings", to: "/services/weddings" },
   { label: "Newborn", to: "/services/newborn" },
   { label: "Portraits", to: "/services/portraits" },
-  { label: "Products", to: "/services/products" },
+  { label: "Products", to: "/services/product-photography" },
   { label: "Studio", to: "/services/studio" },
 ];
 
