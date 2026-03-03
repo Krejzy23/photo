@@ -294,3 +294,8 @@ body {
 .background-text-gallery {
   @apply pointer-events-none absolute left-2/3 -translate-x-1/2 -translate-y-1/2 max-w-full whitespace-nowrap font-bold uppercase tracking-widest text-cyan-400 opacity-[0.1]
 }
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}

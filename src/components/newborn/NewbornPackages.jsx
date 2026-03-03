@@ -32,7 +32,7 @@ const NewbornPackages = () => {
             )}
           >
             {pkg.highlight && (
-              <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-pink-200 px-4 py-1 text-xs text-white">
+              <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-pink-500/60 px-4 py-1 text-xs text-white">
                 Most popular
               </span>
             )}
@@ -61,7 +61,7 @@ const NewbornPackages = () => {
               className={clsx(
                 "mt-10 w-full rounded-full py-3 text-sm transition",
                 pkg.highlight
-                  ? "bg-pink-200 text-black hover:text-white hover:bg-black/90"
+                  ? "bg-pink-500/60 text-black hover:text-white hover:bg-black/90"
                   : "border border-black/10 hover:bg-black hover:text-white"
               )}
             >

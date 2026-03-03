@@ -43,11 +43,11 @@ const NewbornCTA = () => {
           They will never <br /> be this small again.
         </h2>
 
-        <p className="cta-line mt-6 text-sm md:text-base text-white/80">
+        <p className="cta-line mt-6 text-sm md:text-base text-black/80">
           Newborn sessions are best within the first 21 days.
         </p>
 
-        <button className="cta-line mt-10 rounded-full bg-white px-10 py-4 text-sm font-semibold text-black transition hover:bg-white/90">
+        <button className="cta-line mt-10 rounded-full bg-pink-500/60 px-10 py-4 text-sm font-semibold text-black transition hover:bg-black/90 hover:text-white">
           Book your newborn session
         </button>
       </div>

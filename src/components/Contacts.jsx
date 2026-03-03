@@ -73,7 +73,7 @@ const Contact = () => {
 
           <Button
             title="contact"
-            containerClass="mt-10 bg-white text-black hover:bg-black hover:text-white transition-all"
+            containerClass="mt-10 bg-white text-black hover:bg-black  transition-all hover:bg-yellow-300"
           />
         </div>
       </div>
